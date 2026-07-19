@@ -25,3 +25,5 @@ desktop/release/
 
 .DS_Store
 Thumbs.db
+backend-runtime/
+private-backup-*/
