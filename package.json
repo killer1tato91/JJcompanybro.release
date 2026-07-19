@@ -6,9 +6,9 @@
   "author": "J&J Company Bro",
   "license": "UNLICENSED",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/killer1tato91/JJcompanybro.release.git"
-},
+    "type": "git",
+    "url": "https://github.com/killer1tato91/JJcompanybro.release.git"
+  },
   "scripts": {
     "build:frontend": "npm --prefix frontend run build",
     "prepare:backend": "node desktop/prepare-backend.js",
@@ -22,22 +22,23 @@
   },
   "devDependencies": {
     "electron": "^37.2.0",
-    "electron-builder": "^26.0.12"
+    "electron-builder": "^26.0.12",
+    "playwright": "^1.61.1"
   },
   "build": {
     "appId": "com.jjcompanybro.desktop",
     "productName": "J&J Company Bro",
     "asar": true,
     "publish": [
-  {
-    "provider": "github",
-    "owner": "killer1tato91",
-    "repo": "JJcompanybro.release",
-    "releaseType": "release",
-    "channel": "latest",
-    "publishAutoUpdate": true
-  }
-],
+      {
+        "provider": "github",
+        "owner": "killer1tato91",
+        "repo": "JJcompanybro.release",
+        "releaseType": "release",
+        "channel": "latest",
+        "publishAutoUpdate": true
+      }
+    ],
     "directories": {
       "output": "release"
     },

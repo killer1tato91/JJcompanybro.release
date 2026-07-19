@@ -1,59 +1,184 @@
 {
   "schemaVersion": 1,
-  "rulesVersion": "2026.07.19.1",
-  "updatedAt": "2026-07-19T12:00:00-04:00",
+  "rulesVersion": "2026.07.19.2",
+  "updatedAt": "2026-07-19T00:00:00Z",
+
   "firms": {
     "TRADEIFY": {
       "displayName": "Tradeify",
+
       "aliases": [
         "tradeify",
         "tradefy",
         "tdfy"
       ],
-      "plans": {}
+
+      "plans": {
+        "SELECT": {
+          "displayName": "Select",
+
+          "aliases": [
+            "select"
+          ],
+
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": 40,
+                "minimumTradingDays": 3,
+                "maxMiniContracts": 1,
+                "maxMicroContracts": 10
+              }
+            },
+
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": 40,
+                "minimumTradingDays": 3,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+
+                "historicalVariants": [
+                  {
+                    "code": "SELECT_50K_LEGACY_2500",
+                    "profitTarget": 2500,
+                    "appliesTo": "ACCOUNTS_PURCHASED_BEFORE_DASHBOARD_CHANGE"
+                  }
+                ]
+              }
+            },
+
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": 40,
+                "minimumTradingDays": 3,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80
+              }
+            },
+
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": 40,
+                "minimumTradingDays": 3,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120
+              }
+            }
+          }
+        },
+
+        "GROWTH": {
+          "displayName": "Growth",
+
+          "aliases": [
+            "growth"
+          ],
+
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 600,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 1,
+                "maxMicroContracts": 10
+              }
+            },
+
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1250,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              }
+            },
+
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2500,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80
+              }
+            },
+
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 5000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 3750,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120
+              }
+            }
+          }
+        }
+      }
     },
+
     "LUCID": {
       "displayName": "Lucid Trading",
-      "aliases": [
-        "lucid",
-        "lfe",
-        "lff",
-        "lte"
-      ],
+      "aliases": ["lucid", "lfe", "lff", "lte"],
       "plans": {}
     },
+
     "MFFU": {
       "displayName": "My Funded Futures",
-      "aliases": [
-        "mffu",
-        "myfundedfutures",
-        "my funded futures"
-      ],
+      "aliases": ["mffu", "myfundedfutures", "my funded futures"],
       "plans": {}
     },
+
     "APEX": {
       "displayName": "Apex Trader Funding",
-      "aliases": [
-        "apex",
-        "pa-"
-      ],
+      "aliases": ["apex", "pa-"],
       "plans": {}
     },
+
     "TOPSTEP": {
       "displayName": "Topstep",
-      "aliases": [
-        "topstep",
-        "express funded",
-        "trading combine"
-      ],
+      "aliases": ["topstep", "express funded", "trading combine"],
       "plans": {}
     },
+
     "TPT": {
       "displayName": "Take Profit Trader",
-      "aliases": [
-        "take profit trader",
-        "tpt"
-      ],
+      "aliases": ["take profit trader", "tpt"],
       "plans": {}
     }
   }

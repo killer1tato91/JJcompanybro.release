@@ -22,6 +22,12 @@ jobs:
         with:
           node-version: 20
 
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+
       - name: Validar catálogo
         run: node scripts/validate-rules.js
 

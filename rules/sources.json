@@ -1,29 +1,64 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-19T12:00:00-04:00",
+  "updatedAt": "2026-07-19T00:00:00Z",
   "firms": {
     "TRADEIFY": {
       "enabled": true,
-      "sources": []
+      "sources": [
+        {
+          "id": "tradeify-select-evaluation",
+          "name": "Select Evaluation Accounts",
+          "url": "https://help.tradeify.co/en/articles/12853921-select-evaluation-accounts",
+          "type": "HTML",
+          "extractor": "tradeify",
+          "category": "EVALUATION",
+          "planCode": "SELECT",
+          "enabled": true
+        },
+        {
+          "id": "tradeify-growth-evaluation",
+          "name": "Growth Evaluation Accounts",
+          "url": "https://help.tradeify.co/en/articles/10495915-growth-evaluation-accounts",
+          "type": "HTML",
+          "extractor": "tradeify",
+          "category": "EVALUATION",
+          "planCode": "GROWTH",
+          "enabled": true
+        },
+        {
+          "id": "tradeify-consistency",
+          "name": "Consistency Rule",
+          "url": "https://help.tradeify.co/en/articles/10468320-rules-consistency-rule",
+          "type": "HTML",
+          "extractor": "tradeify",
+          "category": "GENERAL_RULES",
+          "enabled": true
+        }
+      ]
     },
+
     "LUCID": {
-      "enabled": true,
+      "enabled": false,
       "sources": []
     },
+
     "MFFU": {
-      "enabled": true,
+      "enabled": false,
       "sources": []
     },
+
     "APEX": {
-      "enabled": true,
+      "enabled": false,
       "sources": []
     },
+
     "TOPSTEP": {
-      "enabled": true,
+      "enabled": false,
       "sources": []
     },
+
     "TPT": {
-      "enabled": true,
+      "enabled": false,
       "sources": []
     }
   }
