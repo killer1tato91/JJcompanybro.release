@@ -1460,7 +1460,11 @@ if (!loggedIn) {
   )
 )}
 {activePage === 'Accounts' && (
-  <Accounts accounts={accounts} />
+  <Accounts
+    accounts={accounts}
+    setAccounts={setAccounts}
+    currentUser={currentUser}
+  />
 )}
 
 {activePage === 'Drawdown' && (
@@ -3537,32 +3541,164 @@ useEffect(() => {
     </div>
   )
 }
-function Accounts({ accounts = [] }) {
-  const masterAccounts = accounts.filter(acc => acc.type === 'master')
-  const slaveAccounts = accounts.filter(acc => acc.type === 'slave')
-  const activeAccounts = accounts.filter(acc => acc.active)
+function Accounts({
+  accounts = [],
+  setAccounts,
+  currentUser
+}) {
+	const visibleAccounts = accounts.filter(account => {
+  const name = String(account.name || '')
+    .toLowerCase()
+
+  return (
+    !name.includes('sim') &&
+    !name.includes('playback') &&
+    !name.includes('backtest') &&
+    !name.includes('demo')
+  )
+})
+  const masterAccounts =
+  visibleAccounts.filter(acc => acc.type === 'master')
+
+const slaveAccounts =
+  visibleAccounts.filter(acc => acc.type === 'slave')
+
+const activeAccounts =
+  visibleAccounts.filter(acc => acc.active)
+
+  const confirmAccountPlan = async (
+    account,
+    planCode
+  ) => {
+    try {
+      const response = await fetch(
+        'http://localhost:3001/api/accounts/confirm-plan',
+        {
+          method: 'POST',
+
+          headers: {
+            'Content-Type': 'application/json'
+          },
+
+          body: JSON.stringify({
+            email: currentUser?.email,
+
+            accountName:
+              account.name ||
+              account.accountName ||
+              account.account,
+
+            planCode
+          })
+        }
+      )
+
+      const data = await response.json()
+
+      if (!response.ok || !data.success) {
+        alert(
+          data.message ||
+          'No se pudo confirmar el plan'
+        )
+
+        return
+      }
+
+      setAccounts(previous =>
+        previous.map(item =>
+          String(item.name) ===
+          String(data.account.name)
+            ? data.account
+            : item
+        )
+      )
+    } catch (error) {
+      console.error(
+        'Error confirmando plan:',
+        error
+      )
+
+      alert(
+        'No se pudo conectar con el backend'
+      )
+    }
+  }
+
+  const getRulesStatus = account => {
+    if (
+      account.rulesResolutionStatus ===
+      'RESOLVED'
+    ) {
+      return {
+        text: 'Reglas verificadas',
+        className: 'green'
+      }
+    }
+
+    if (
+      account.rulesResolutionStatus ===
+      'PLAN_CONFIRMATION_REQUIRED'
+    ) {
+      return {
+        text: 'Seleccionar plan',
+        className: 'orange'
+      }
+    }
+
+    if (
+      account.rulesResolutionStatus ===
+      'PLAN_NOT_AVAILABLE'
+    ) {
+      return {
+        text: 'Reglas pendientes',
+        className: 'orange'
+      }
+    }
+
+    if (
+      account.rulesResolutionStatus ===
+      'FIRM_NOT_DETECTED'
+    ) {
+      return {
+        text: 'Sin firma detectada',
+        className: 'muted'
+      }
+    }
+
+    return {
+      text: 'Pendiente',
+      className: 'muted'
+    }
+  }
 
   return (
     <div className="accounts-page">
       <section className="stats">
         <div className="stat-card">
-          <span>Total Cuentas</span>
-          <h2>{accounts.length}</h2>
-          <p className="blue">Detectadas desde NinjaTrader</p>
+         <span>TOTAL CUENTAS</span>
+         <h2>{visibleAccounts.length}</h2>
+          <p className="blue">
+            Detectadas desde NinjaTrader
+          </p>
         </div>
 
         <div className="stat-card">
           <span>Master</span>
           <h2>{masterAccounts.length}</h2>
+
           <p className="green">
-            {masterAccounts[0]?.name || 'Sin master'}
+            {masterAccounts[0]?.name ||
+              'Sin master'}
           </p>
         </div>
 
         <div className="stat-card">
           <span>Slave</span>
           <h2>{slaveAccounts.length}</h2>
-          <p className="orange">Cuentas copiadas</p>
+
+          <p className="orange">
+            Cuentas copiadas
+          </p>
         </div>
 
         <div className="stat-card">
@@ -3575,63 +3711,226 @@ function Accounts({ accounts = [] }) {
       <div className="panel accounts-table">
         <div className="panel-head">
           <h3>Accounts Manager</h3>
-          <span>{accounts.length} cuentas detectadas</span>
+
+        <span>{visibleAccounts.length} cuentas detectadas</span>
         </div>
 
         <table>
           <thead>
             <tr>
               <th>Cuenta</th>
-              <th>Broker</th>
-              <th>Tipo</th>
+              <th>Firma</th>
+              <th>Etapa</th>
+              <th>Plan</th>
+              <th>Tamaño</th>
               <th>Balance</th>
-              <th>P&L</th>
+              <th>P&amp;L</th>
+              <th>Reglas</th>
               <th>Estado</th>
-			  <th>Contratos</th>
-              <th>Posición</th>
-			  
+              <th>Activa</th>
             </tr>
           </thead>
 
           <tbody>
-  {accounts.map(account => (
-    <tr key={account.id}>
-      <td>{account.name}</td>
-      <td>{account.broker}</td>
-      <td>{account.type === 'master' ? '👑 Master' : '🔁 Slave'}</td>
-      <td>${account.balance.toLocaleString()}</td>
-      <td>${account.pnl.toLocaleString()}</td>
+            {visibleAccounts.map(account => {
+              const rulesStatus =
+                getRulesStatus(account)
 
-      <td>
-        <span className={account.connected ? 'green' : 'red'}>
-          {account.connected ? '◿Online' : '◿Offline'}
-        </span>
-      </td>
+              const accountSize =
+                Number(account.accountSize)
 
-      <td>{account.contracts || 0}</td>
-      <td>{account.positions || '-'}</td>
+              return (
+                <tr
+                  key={
+                    account.id ||
+                    account.name
+                  }
+                >
+                  <td>
+                    <strong>
+                      {account.name}
+                    </strong>
 
-      <td>
-        <input
-          type="checkbox"
-          checked={account.active}
-          onChange={(e) => {
-            fetch('http://localhost:3001/api/accounts/toggle', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                accountName: account.name,
-                active: e.target.checked
-              })
-            })
-          }}
-        />
-      </td>
-    </tr>
-  ))}
-</tbody>
+                    <small
+                      style={{
+                        display: 'block',
+                        opacity: 0.65
+                      }}
+                    >
+                      {account.type === 'master'
+                        ? '👑 Master'
+                        : '🔁 Slave'}
+                    </small>
+                  </td>
+
+                  <td>
+                    {account.firmDisplayName ||
+                      account.firmCode ||
+                      account.broker ||
+                      'No detectada'}
+                  </td>
+
+                  <td>
+                    {account.accountStage ||
+                      'UNKNOWN'}
+                  </td>
+
+                  <td>
+                    {account.planDisplayName ||
+                      account.planCode ||
+                      account.detectedPlanCode ||
+                      'Sin configurar'}
+
+                    {account
+                      .requiresPlanConfirmation && (
+                      <div
+                        style={{
+                          display: 'flex',
+                          gap: '6px',
+                          marginTop: '8px'
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="success-btn"
+                          onClick={() =>
+                            confirmAccountPlan(
+                              account,
+                              'SELECT'
+                            )
+                          }
+                        >
+                          Select
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() =>
+                            confirmAccountPlan(
+                              account,
+                              'GROWTH'
+                            )
+                          }
+                        >
+                          Growth
+                        </button>
+                      </div>
+                    )}
+                  </td>
+
+                  <td>
+                    {accountSize > 0
+                      ? `${(
+                          accountSize / 1000
+                        ).toFixed(0)}K`
+                      : '—'}
+                  </td>
+
+                  <td>
+                    $
+                    {Number(
+                      account.balance || 0
+                    ).toLocaleString()}
+                  </td>
+
+                  <td
+                    className={
+                      Number(account.pnl || 0) >= 0
+                        ? 'green'
+                        : 'red'
+                    }
+                  >
+                    $
+                    {Number(
+                      account.pnl || 0
+                    ).toLocaleString()}
+                  </td>
+
+                  <td>
+                    <span
+                      className={
+                        rulesStatus.className
+                      }
+                    >
+                      {rulesStatus.text}
+                    </span>
+
+                    {account
+                      .rulesResolutionStatus ===
+                      'RESOLVED' && (
+                      <small
+                        style={{
+                          display: 'block',
+                          marginTop: '4px',
+                          opacity: 0.65
+                        }}
+                      >
+                        Versión{' '}
+                        {account.rulesVersion}
+                      </small>
+                    )}
+                  </td>
+
+                  <td>
+                    <span
+                      className={
+                        account.connected
+                          ? 'green'
+                          : 'red'
+                      }
+                    >
+                      {account.connected
+                        ? '● Online'
+                        : '● Offline'}
+                    </span>
+                  </td>
+
+                  <td>
+                    <input
+                      type="checkbox"
+                      checked={
+                        account.active === true
+                      }
+                      onChange={event => {
+                        const active =
+                          event.target.checked
+
+                        fetch(
+                          'http://localhost:3001/api/accounts/toggle',
+                          {
+                            method: 'POST',
+
+                            headers: {
+                              'Content-Type':
+                                'application/json'
+                            },
+
+                            body: JSON.stringify({
+                              accountName:
+                                account.name,
+                              active
+                            })
+                          }
+                        )
+
+                        setAccounts(previous =>
+                          previous.map(item =>
+                            item.name ===
+                            account.name
+                              ? {
+                                  ...item,
+                                  active
+                                }
+                              : item
+                          )
+                        )
+                      }}
+                    />
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
         </table>
       </div>
     </div>
@@ -4895,21 +5194,21 @@ function getViolationRisk(accounts) {
   }
 }
 function EvaluationTracker({ accounts = [] }) {
-  const evaluations = accounts
-    .filter(account => {
-      const stage = String(
-        account.accountStage || ''
-      ).toUpperCase()
+ const evaluations = accounts
+  .filter(account => {
+    const stage = String(
+      account.accountStage || ''
+    ).toUpperCase()
 
-      return stage === 'EVALUATION'
-    })
-    .map(account => {
-      const target = Number(
-        account.evaluationProfitTarget ||
-        account.profitTarget ||
-        1500
-      )
-
+    return (
+      stage === 'EVALUATION' &&
+      account.evaluationRulesVerified === true
+    )
+  })
+  .map(account => {
+    const target = Number(
+      account.evaluationProfitTarget || 0
+    )
       const profit = Number(
         account.evaluationProfit ||
         0

@@ -5,7 +5,14 @@ const path = require('path');
 const crypto = require('crypto')
 const processedCommands = new Set();
 const AdmZip = require('adm-zip');
-
+const {
+  getRules,
+  getRulesStatus,
+  updateRulesFromGitHub
+} = require('./services/propFirmRulesService')
+const {
+  resolveAccountRules
+} = require('./services/accountRulesResolver')
 const app = express();
 const PORT = 3001;
 const dataDir = process.env.JJ_DATA_DIR || path.join(__dirname, 'data');
@@ -1029,68 +1036,40 @@ const detectAccountStage = account => {
   return 'UNKNOWN'
 }
 const getEvaluationRules = account => {
+  /*
+    Regla confirmada manualmente o cargada
+    desde el catálogo oficial.
+  */
   if (account.evaluationRules) {
     return {
+      verified: true,
+
       startingBalance: Number(
         account.evaluationRules.startingBalance ??
         account.startingBalance ??
-        25000
+        account.initialBalance ??
+        0
       ),
 
       profitTarget: Number(
-        account.evaluationRules.profitTarget ??
-        account.profitTarget ??
-        1500
+        account.evaluationRules.profitTarget ?? 0
       ),
 
       requiredDays: Number(
-        account.evaluationRules.requiredDays ??
-        0
+        account.evaluationRules.requiredDays ?? 0
       )
     }
   }
 
-  const name = normalizeAccountText(
-    getAccountDisplayName(account)
-  )
-
-  const startingBalance = Number(
-    account.startingBalance ||
-    account.initialBalance ||
-    account.accountSize ||
-    (
-      name.includes('150k')
-        ? 150000
-        : name.includes('100k')
-          ? 100000
-          : name.includes('50k')
-            ? 50000
-            : 25000
-    )
-  )
-
   /*
-    Regla temporal por defecto.
-    Después cada cuenta podrá recibir su target real
-    desde account.evaluationRules.
+    La firma fue identificada, pero todavía
+    no tiene reglas oficiales resueltas.
   */
-  let profitTarget = Number(
-    account.profitTarget || 1500
-  )
-
-  if (
-    name.includes('1250') ||
-    account.plan === '25K-1250'
-  ) {
-    profitTarget = 1250
-  }
-
   return {
-    startingBalance,
-    profitTarget,
-    requiredDays: Number(
-      account.requiredEvaluationDays || 0
-    )
+    verified: false,
+    startingBalance: null,
+    profitTarget: null,
+    requiredDays: null
   }
 }
 const evaluateAccountProgress = account => {
@@ -1103,7 +1082,26 @@ const evaluateAccountProgress = account => {
   }
 
   const rules = getEvaluationRules(account)
+  if (
+    !rules.verified ||
+    !Number.isFinite(rules.startingBalance) ||
+    !Number.isFinite(rules.profitTarget) ||
+    rules.startingBalance <= 0 ||
+    rules.profitTarget <= 0
+  ) {
+    account.evaluationRulesVerified = false
+    account.evaluationStartingBalance = null
+    account.evaluationProfitTarget = null
+    account.evaluationProfit = null
+    account.evaluationProfitMissing = null
+    account.evaluationPassed = false
+    account.evaluationLastCalculatedAt =
+      new Date().toISOString()
 
+    return
+  }
+
+  account.evaluationRulesVerified = true
   const currentBalance = Number(
     account.balance ||
     account.cashValue ||
@@ -1193,6 +1191,116 @@ const evaluateAccountProgress = account => {
       alertMessage
     )
   }
+}
+
+const applyCatalogRulesToAccount = account => {
+  const resolution = resolveAccountRules(account)
+
+  account.rulesResolutionStatus =
+    resolution.success
+      ? 'RESOLVED'
+      : resolution.reason
+
+  account.rulesVersion =
+    resolution.rulesVersion || null
+
+  account.rulesLastResolvedAt =
+    new Date().toISOString()
+
+  if (resolution.classification) {
+    account.firmCode =
+      resolution.classification.firmCode ||
+      account.firmCode ||
+      null
+
+    account.detectedPlanCode =
+      resolution.classification.planCode ||
+      null
+
+    account.accountSize =
+      resolution.classification.accountSize ||
+      account.accountSize ||
+      null
+
+    account.requiresPlanConfirmation =
+      Boolean(
+        resolution.classification
+          .requiresPlanConfirmation
+      )
+  }
+
+  if (!resolution.success) {
+    account.availablePlanOptions =
+      resolution.availablePlans || []
+
+    return resolution
+  }
+
+  account.planCode =
+    resolution.plan.code
+
+  account.planDisplayName =
+    resolution.plan.displayName
+
+  account.firmDisplayName =
+    resolution.firm.displayName
+
+  account.accountSize =
+    resolution.accountSize
+
+  account.requiresPlanConfirmation =
+    false
+
+  account.availablePlanOptions = []
+
+  account.resolvedRules = {
+    ...resolution.rules
+  }
+
+  /*
+    Mantener compatibilidad con el motor actual
+    de progreso de evaluaciones.
+  */
+  if (resolution.stage === 'evaluation') {
+    account.evaluationRules = {
+      startingBalance:
+        Number(
+          account.startingBalance ||
+          account.initialBalance ||
+          resolution.accountSize
+        ),
+
+      profitTarget:
+        Number(
+          resolution.rules.profitTarget || 0
+        ),
+
+      requiredDays:
+        Number(
+          resolution.rules.minimumTradingDays || 0
+        ),
+
+      maximumDrawdown:
+        resolution.rules.maximumDrawdown ?? null,
+
+      drawdownType:
+        resolution.rules.drawdownType ?? null,
+
+      dailyLossLimit:
+        resolution.rules.dailyLossLimit ?? null,
+
+      consistencyPercent:
+        resolution.rules.consistencyPercent ?? null,
+
+      maxMiniContracts:
+        resolution.rules.maxMiniContracts ?? null,
+
+      maxMicroContracts:
+        resolution.rules.maxMicroContracts ?? null
+    }
+  }
+
+  return resolution
 }
 // ACCOUNTS API
 app.get('/api/accounts', (req, res) => {
@@ -2169,6 +2277,10 @@ if (!exists) {
 
 const finalAccount =
   exists || updatedAccount
+
+applyCatalogRulesToAccount(
+  finalAccount
+)
 
 if (accountStage === 'FUNDED') {
   calculateAccountPayoutStatus(
@@ -3531,22 +3643,236 @@ app.post('/api/addon/copy-log', (req, res) => {
     log: item
   });
 });
+
+app.get(
+  '/api/prop-firm-rules',
+  (req, res) => {
+    const rules = getRules()
+
+    if (!rules) {
+      return res.status(503).json({
+        success: false,
+        message:
+          'No hay catálogo de reglas disponible'
+      })
+    }
+
+    res.json({
+      success: true,
+      schemaVersion:
+        rules.schemaVersion,
+      rulesVersion:
+        rules.rulesVersion,
+      updatedAt:
+        rules.updatedAt,
+      firms:
+        rules.firms
+    })
+  }
+)
+app.get(
+  '/api/prop-firm-rules/status',
+  (req, res) => {
+    res.json({
+      success: true,
+      ...getRulesStatus()
+    })
+  }
+)
+app.post(
+  '/api/prop-firm-rules/update',
+  async (req, res) => {
+    const result =
+      await updateRulesFromGitHub()
+
+    res.status(
+      result.rules ? 200 : 503
+    ).json(result)
+  }
+)
+
+const PROP_RULES_UPDATE_INTERVAL =
+  6 * 60 * 60 * 1000
+
+setInterval(async () => {
+  const result =
+    await updateRulesFromGitHub()
+
+  if (result.success && result.updated) {
+    console.log(
+      'Nueva versión de reglas instalada:',
+      result.rules?.rulesVersion
+    )
+  }
+}, PROP_RULES_UPDATE_INTERVAL)
+
+app.post(
+  '/api/accounts/confirm-plan',
+  (req, res) => {
+    try {
+      const {
+        email,
+        accountName,
+        planCode
+      } = req.body || {}
+
+      if (
+        !accountName ||
+        !planCode
+      ) {
+        return res.status(400).json({
+          success: false,
+          message:
+            'accountName y planCode son requeridos'
+        })
+      }
+
+      const normalizedAccountName =
+        String(accountName)
+          .trim()
+          .toLowerCase()
+
+      const normalizedEmail =
+        String(email || '')
+          .trim()
+          .toLowerCase()
+
+      const account = accounts.find(item => {
+        const itemName =
+          String(
+            item.name ||
+            item.accountName ||
+            ''
+          )
+            .trim()
+            .toLowerCase()
+
+        const itemEmail =
+          String(
+            item.ownerEmail ||
+            item.userEmail ||
+            ''
+          )
+            .trim()
+            .toLowerCase()
+
+        return (
+          itemName === normalizedAccountName &&
+          (
+            !normalizedEmail ||
+            !itemEmail ||
+            itemEmail === normalizedEmail
+          )
+        )
+      })
+
+      if (!account) {
+        return res.status(404).json({
+          success: false,
+          message:
+            'Cuenta no encontrada'
+        })
+      }
+
+      const normalizedPlanCode =
+        String(planCode)
+          .trim()
+          .toUpperCase()
+
+      const validPlans = [
+        'SELECT',
+        'GROWTH'
+      ]
+
+      if (
+        !validPlans.includes(
+          normalizedPlanCode
+        )
+      ) {
+        return res.status(400).json({
+          success: false,
+          message:
+            'Plan no válido para Tradeify'
+        })
+      }
+
+      account.planCode =
+        normalizedPlanCode
+
+      account.plan =
+        normalizedPlanCode
+
+      account.planConfirmedManually =
+        true
+
+      account.planConfirmedAt =
+        new Date().toISOString()
+
+      const resolution =
+        applyCatalogRulesToAccount(account)
+
+      if (!resolution.success) {
+        return res.status(400).json({
+          success: false,
+          message:
+            'No fue posible resolver las reglas',
+          reason:
+            resolution.reason,
+          account
+        })
+      }
+
+      if (
+        account.accountStage === 'EVALUATION'
+      ) {
+        evaluateAccountProgress(account)
+      }
+
+      saveAccounts()
+
+      return res.json({
+        success: true,
+        message:
+          'Plan confirmado y reglas aplicadas',
+        account,
+        resolution
+      })
+    } catch (error) {
+      console.error(
+        'Error confirmando plan:',
+        error
+      )
+
+      return res.status(500).json({
+        success: false,
+        message:
+          'Error interno confirmando el plan'
+      })
+    }
+  }
+)
 // START SERVER
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, async () => {
   console.log(
     `Servidor funcionando en puerto ${PORT}`
   )
 
-  try {
-    recalculateAllPayoutAccounts()
+  const rulesResult =
+    await updateRulesFromGitHub()
 
+  if (rulesResult.success) {
     console.log(
-      'Estados de payout recalculados'
+      'Catálogo de Prop Firms listo:',
+      rulesResult.rules?.rulesVersion
     )
-  } catch (error) {
-    console.error(
-      'Error calculando payouts al iniciar:',
-      error
+  } else if (rulesResult.rules) {
+    console.log(
+      'Usando catálogo local de respaldo:',
+      rulesResult.rules.rulesVersion
+    )
+  } else {
+    console.log(
+      'No hay catálogo de Prop Firms disponible'
     )
   }
 })
