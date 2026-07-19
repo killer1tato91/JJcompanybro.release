@@ -1,0 +1,46 @@
+name: Revisar reglas de Prop Firms
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "17 12 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  check-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validar catálogo
+        run: node scripts/validate-rules.js
+
+      - name: Revisar fuentes oficiales
+        run: node scripts/check-prop-firm-rules.js
+
+      - name: Validar resultado
+        run: node scripts/validate-rules.js
+
+      - name: Guardar resultado
+        run: |
+          git config user.name "J&J Rules Bot"
+          git config user.email "jj-rules-bot@users.noreply.github.com"
+
+          git add rules/pending-changes.json
+
+          if git diff --cached --quiet; then
+            echo "No hay cambios para guardar"
+          else
+            git commit -m "Actualizar revisión automática de reglas"
+            git push
+          fi

@@ -1,0 +1,12 @@
+{
+  "platformName": "J&J Company Bro",
+  "language": "en",
+  "theme": "dark",
+  "primaryColor": "#16a34a",
+  "soundsEnabled": true,
+  "alertsEnabled": true,
+  "alertSound": "beep",
+  "showGlobalPnL": true,
+  "refreshInterval": 3,
+  "confirmPanicClose": false
+}

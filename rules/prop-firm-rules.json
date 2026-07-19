@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": "2026.07.19.1",
+  "updatedAt": "2026-07-19T12:00:00-04:00",
+  "firms": {
+    "TRADEIFY": {
+      "displayName": "Tradeify",
+      "aliases": [
+        "tradeify",
+        "tradefy",
+        "tdfy"
+      ],
+      "plans": {}
+    },
+    "LUCID": {
+      "displayName": "Lucid Trading",
+      "aliases": [
+        "lucid",
+        "lfe",
+        "lff",
+        "lte"
+      ],
+      "plans": {}
+    },
+    "MFFU": {
+      "displayName": "My Funded Futures",
+      "aliases": [
+        "mffu",
+        "myfundedfutures",
+        "my funded futures"
+      ],
+      "plans": {}
+    },
+    "APEX": {
+      "displayName": "Apex Trader Funding",
+      "aliases": [
+        "apex",
+        "pa-"
+      ],
+      "plans": {}
+    },
+    "TOPSTEP": {
+      "displayName": "Topstep",
+      "aliases": [
+        "topstep",
+        "express funded",
+        "trading combine"
+      ],
+      "plans": {}
+    },
+    "TPT": {
+      "displayName": "Take Profit Trader",
+      "aliases": [
+        "take profit trader",
+        "tpt"
+      ],
+      "plans": {}
+    }
+  }
+}

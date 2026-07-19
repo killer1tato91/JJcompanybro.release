@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-19T12:00:00-04:00",
+  "firms": {
+    "TRADEIFY": {
+      "enabled": true,
+      "sources": []
+    },
+    "LUCID": {
+      "enabled": true,
+      "sources": []
+    },
+    "MFFU": {
+      "enabled": true,
+      "sources": []
+    },
+    "APEX": {
+      "enabled": true,
+      "sources": []
+    },
+    "TOPSTEP": {
+      "enabled": true,
+      "sources": []
+    },
+    "TPT": {
+      "enabled": true,
+      "sources": []
+    }
+  }
+}

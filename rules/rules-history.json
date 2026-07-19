@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "rulesVersion": "2026.07.19.1",
+      "createdAt": "2026-07-19T12:00:00-04:00",
+      "description": "Creación inicial del catálogo de reglas",
+      "changes": []
+    }
+  ]
+}

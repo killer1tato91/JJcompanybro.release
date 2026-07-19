@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>J&J Trade Test</title>
+</head>
+<body>
+
+<h1>J&J Company Bro</h1>
+
+<button id="sendBtn">Enviar Trade</button>
+
+<script>
+
+document.getElementById('sendBtn').addEventListener('click', async () => {
+
+  console.log('BOTON PRESIONADO');
+
+  try {
+
+    const response = await fetch('http://localhost:3001/api/trades/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        account: 'Master',
+        symbol: 'NQ',
+        action: 'BUY',
+        quantity: 1
+      })
+    });
+
+    const data = await response.json();
+
+    console.log(data);
+
+    alert('TRADE ENVIADO');
+
+  } catch(error) {
+
+    console.log(error);
+
+    alert('ERROR');
+  }
+
+});
+
+</script>
+
+</body>
+</html>

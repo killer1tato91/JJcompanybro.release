@@ -1,0 +1,40 @@
+import Sidebar from '../components/Sidebar'
+import Topbar from '../components/Topbar'
+import StatCard from '../components/StatCard'
+
+export default function Dashboard() {
+  return (
+    <div className="app">
+      <Sidebar />
+
+      <div className="main">
+        <Topbar />
+
+        {/* STATS */}
+        <div className="grid">
+          <StatCard title="Balance Total" value="$152,430.75" />
+          <StatCard title="Cuentas Conectadas" value="6" />
+          <StatCard title="Operaciones Abiertas" value="14" />
+          <StatCard title="Estado Sistema" value="Operativo" />
+        </div>
+
+        {/* PANEL CENTRAL */}
+        <div className="panel">
+          <div className="card large">
+            <h3>Performance General</h3>
+            <div className="chart">
+              Equity Curve (conectar backend luego)
+            </div>
+          </div>
+
+          <div className="card">
+            <h3>Conexiones</h3>
+            <p>🟢 NinjaTrader</p>
+            <p>🟢 Tradovate</p>
+            <p>🟢 Rithmic</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

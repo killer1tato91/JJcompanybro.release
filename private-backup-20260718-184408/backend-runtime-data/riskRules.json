@@ -1,0 +1,9 @@
+[
+  {
+    "groupId": 1780763817724,
+    "maxDailyLoss": 48,
+    "maxDailyProfit": 73,
+    "drawdownAlertPercent": 50,
+    "autoBlock": true
+  }
+]

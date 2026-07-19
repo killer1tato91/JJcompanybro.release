@@ -1,0 +1,27 @@
+node_modules/
+dist/
+release/
+out/
+build/
+
+.env
+.env.*
+!.env.example
+
+*.log
+
+token.txt
+tokenpara publicar updates.txt
+*token*
+*secret*
+
+backend/node_modules/
+frontend/node_modules/
+desktop/node_modules/
+
+frontend/dist/
+desktop/dist/
+desktop/release/
+
+.DS_Store
+Thumbs.db
