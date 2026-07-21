@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-20T17:11:12.298Z",
+  "generatedAt": "2026-07-21T17:02:18.255Z",
   "rulesVersionChecked": "2026.07.19.3",
   "firmsChecked": [
     "TRADEIFY"
   ],
   "summary": {
     "sourcesChecked": 3,
-    "successfulSources": 3,
-    "failedSources": 0,
+    "successfulSources": 2,
+    "failedSources": 1,
     "detectedChanges": 0
   },
   "changes": [],
@@ -17,7 +17,7 @@
       "sourceId": "tradeify-select-evaluation",
       "sourceName": "Select Evaluation Accounts",
       "sourceUrl": "https://help.tradeify.co/en/articles/12853921-select-evaluation-accounts",
-      "checkedAt": "2026-07-20T17:11:04.842Z",
+      "checkedAt": "2026-07-21T17:02:14.435Z",
       "success": true,
       "checks": [
         {
@@ -74,7 +74,7 @@
       "sourceId": "tradeify-growth-evaluation",
       "sourceName": "Growth Evaluation Accounts",
       "sourceUrl": "https://help.tradeify.co/en/articles/10495915-growth-evaluation-accounts",
-      "checkedAt": "2026-07-20T17:11:08.278Z",
+      "checkedAt": "2026-07-21T17:02:18.138Z",
       "success": true,
       "checks": [
         {
@@ -195,18 +195,11 @@
       "sourceId": "tradeify-consistency",
       "sourceName": "Consistency Rule",
       "sourceUrl": "https://help.tradeify.co/en/articles/10468320-rules-consistency-rule",
-      "checkedAt": "2026-07-20T17:11:12.298Z",
-      "success": true,
-      "checks": [
-        {
-          "field": "SELECT.consistencyPercent",
-          "expectedValue": 40,
-          "detectedValue": 40,
-          "matches": true,
-          "confidence": 0.98,
-          "evidence": "General consistency article"
-        }
-      ]
+      "checkedAt": "2026-07-21T17:02:18.255Z",
+      "success": false,
+      "status": "ACCESS_BLOCKED",
+      "error": "HTTP 403 en https://help.tradeify.co/en/articles/10468320-rules-consistency-rule",
+      "checks": []
     }
   ]
 }
