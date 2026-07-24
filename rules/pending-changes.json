@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T17:08:33.888Z",
+  "generatedAt": "2026-07-24T17:58:13.675Z",
   "rulesVersionChecked": "2026.07.19.3",
   "firmsChecked": [
     "TRADEIFY"
   ],
   "summary": {
     "sourcesChecked": 3,
-    "successfulSources": 0,
-    "failedSources": 3,
+    "successfulSources": 3,
+    "failedSources": 0,
     "detectedChanges": 0
   },
   "changes": [],
@@ -17,31 +17,196 @@
       "sourceId": "tradeify-select-evaluation",
       "sourceName": "Select Evaluation Accounts",
       "sourceUrl": "https://help.tradeify.co/en/articles/12853921-select-evaluation-accounts",
-      "checkedAt": "2026-07-23T17:08:33.660Z",
-      "success": false,
-      "status": "ACCESS_BLOCKED",
-      "error": "HTTP 403 en https://help.tradeify.co/en/articles/12853921-select-evaluation-accounts",
-      "checks": []
+      "checkedAt": "2026-07-24T17:58:06.403Z",
+      "success": true,
+      "checks": [
+        {
+          "field": "SELECT.minimumTradingDays",
+          "expectedValue": 3,
+          "detectedValue": 3,
+          "matches": true,
+          "confidence": 0.95,
+          "evidence": "Select minimum trading days"
+        },
+        {
+          "field": "SELECT.consistencyPercent",
+          "expectedValue": 40,
+          "detectedValue": 40,
+          "matches": true,
+          "confidence": 0.98,
+          "evidence": "Select consistency rule"
+        },
+        {
+          "field": "SELECT.25000.profitTarget",
+          "expectedValue": 1500,
+          "detectedValue": 1500,
+          "matches": true,
+          "confidence": 0.98,
+          "evidence": "Select 25K profit target"
+        },
+        {
+          "field": "SELECT.50000.profitTarget",
+          "expectedValue": 3000,
+          "detectedValue": 3000,
+          "matches": true,
+          "confidence": 0.98,
+          "evidence": "Select 50K profit target"
+        },
+        {
+          "field": "SELECT.100000.profitTarget",
+          "expectedValue": 6000,
+          "detectedValue": 6000,
+          "matches": true,
+          "confidence": 0.98,
+          "evidence": "Select 100K profit target"
+        },
+        {
+          "field": "SELECT.150000.profitTarget",
+          "expectedValue": 9000,
+          "detectedValue": 9000,
+          "matches": true,
+          "confidence": 0.98,
+          "evidence": "Select 150K profit target"
+        }
+      ]
     },
     {
       "sourceId": "tradeify-growth-evaluation",
       "sourceName": "Growth Evaluation Accounts",
       "sourceUrl": "https://help.tradeify.co/en/articles/10495915-growth-evaluation-accounts",
-      "checkedAt": "2026-07-23T17:08:33.770Z",
-      "success": false,
-      "status": "ACCESS_BLOCKED",
-      "error": "HTTP 403 en https://help.tradeify.co/en/articles/10495915-growth-evaluation-accounts",
-      "checks": []
+      "checkedAt": "2026-07-24T17:58:10.072Z",
+      "success": true,
+      "checks": [
+        {
+          "field": "GROWTH.minimumTradingDays",
+          "expectedValue": 1,
+          "detectedValue": 1,
+          "matches": true,
+          "confidence": 0.95,
+          "evidence": "Growth minimum trading days"
+        },
+        {
+          "field": "GROWTH.consistencyPercent",
+          "expectedValue": null,
+          "detectedValue": null,
+          "matches": true,
+          "confidence": 0.9,
+          "evidence": "Growth evaluation consistency"
+        },
+        {
+          "field": "GROWTH.25000.profitTarget",
+          "expectedValue": 1500,
+          "detectedValue": 1500,
+          "matches": true,
+          "confidence": 0.9,
+          "evidence": "Growth 25000 profit target"
+        },
+        {
+          "field": "GROWTH.25000.dailyLossLimit",
+          "expectedValue": 600,
+          "detectedValue": 600,
+          "matches": true,
+          "confidence": 0.85,
+          "evidence": "Growth 25000 daily loss"
+        },
+        {
+          "field": "GROWTH.25000.maximumDrawdown",
+          "expectedValue": 1000,
+          "detectedValue": 1000,
+          "matches": true,
+          "confidence": 0.85,
+          "evidence": "Growth 25000 drawdown"
+        },
+        {
+          "field": "GROWTH.50000.profitTarget",
+          "expectedValue": 3000,
+          "detectedValue": 3000,
+          "matches": true,
+          "confidence": 0.9,
+          "evidence": "Growth 50000 profit target"
+        },
+        {
+          "field": "GROWTH.50000.dailyLossLimit",
+          "expectedValue": 1250,
+          "detectedValue": 1250,
+          "matches": true,
+          "confidence": 0.85,
+          "evidence": "Growth 50000 daily loss"
+        },
+        {
+          "field": "GROWTH.50000.maximumDrawdown",
+          "expectedValue": 2000,
+          "detectedValue": 2000,
+          "matches": true,
+          "confidence": 0.85,
+          "evidence": "Growth 50000 drawdown"
+        },
+        {
+          "field": "GROWTH.100000.profitTarget",
+          "expectedValue": 6000,
+          "detectedValue": 6000,
+          "matches": true,
+          "confidence": 0.9,
+          "evidence": "Growth 100000 profit target"
+        },
+        {
+          "field": "GROWTH.100000.dailyLossLimit",
+          "expectedValue": 2500,
+          "detectedValue": 2500,
+          "matches": true,
+          "confidence": 0.85,
+          "evidence": "Growth 100000 daily loss"
+        },
+        {
+          "field": "GROWTH.100000.maximumDrawdown",
+          "expectedValue": 3500,
+          "detectedValue": 3500,
+          "matches": true,
+          "confidence": 0.85,
+          "evidence": "Growth 100000 drawdown"
+        },
+        {
+          "field": "GROWTH.150000.profitTarget",
+          "expectedValue": 9000,
+          "detectedValue": 9000,
+          "matches": true,
+          "confidence": 0.9,
+          "evidence": "Growth 150000 profit target"
+        },
+        {
+          "field": "GROWTH.150000.dailyLossLimit",
+          "expectedValue": 3750,
+          "detectedValue": 3750,
+          "matches": true,
+          "confidence": 0.85,
+          "evidence": "Growth 150000 daily loss"
+        },
+        {
+          "field": "GROWTH.150000.maximumDrawdown",
+          "expectedValue": 5000,
+          "detectedValue": 5000,
+          "matches": true,
+          "confidence": 0.85,
+          "evidence": "Growth 150000 drawdown"
+        }
+      ]
     },
     {
       "sourceId": "tradeify-consistency",
       "sourceName": "Consistency Rule",
       "sourceUrl": "https://help.tradeify.co/en/articles/10468320-rules-consistency-rule",
-      "checkedAt": "2026-07-23T17:08:33.888Z",
-      "success": false,
-      "status": "ACCESS_BLOCKED",
-      "error": "HTTP 403 en https://help.tradeify.co/en/articles/10468320-rules-consistency-rule",
-      "checks": []
+      "checkedAt": "2026-07-24T17:58:13.675Z",
+      "success": true,
+      "checks": [
+        {
+          "field": "SELECT.consistencyPercent",
+          "expectedValue": 40,
+          "detectedValue": 40,
+          "matches": true,
+          "confidence": 0.98,
+          "evidence": "General consistency article"
+        }
+      ]
     }
   ]
 }
