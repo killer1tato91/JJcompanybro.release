@@ -1,8 +1,8 @@
 {
-    "version":  "1.6.3",
+    "version":  "1.6.4",
     "packagePath":  "bot/JJBotPack.zip",
-    "sha256":  "d14b5644e20b2376c43b2f3456761b55ece81f57b035e643eed212ed47d10252",
+    "sha256":  "e6b89114fc91ba9fe2ea325adbc115a8a13176a87fff23c8580190460cf80bb9",
     "requiredAppVersion":  "1.1.21",
     "notes":  "V16 Shared Learning + Safe Multi Profiles",
-    "publishedAt":  "2026-08-18T16:08:01.1928943Z"
+    "publishedAt":  "2026-08-18T20:48:32.0024403Z"
 }
