@@ -1,8 +1,9 @@
 {
-    "version":  "1.6.4",
+    "version":  "1.6.7",
     "packagePath":  "bot/JJBotPack.zip",
-    "sha256":  "e6b89114fc91ba9fe2ea325adbc115a8a13176a87fff23c8580190460cf80bb9",
-    "requiredAppVersion":  "1.1.21",
-    "notes":  "V16 Shared Learning + Safe Multi Profiles",
-    "publishedAt":  "2026-08-18T20:48:32.0024403Z"
+    "sha256":  "673136866513fc1b2c14040458729c93c78bce85747176b898a224d3a805e380",
+    "requiredAppVersion":  "1.1.27",
+    "learningBaseVersion":  "1.6.7",
+    "notes":  "V1.6.7 EarlyMove + NoChase + clean telemetry + two-layer Learning Base/User distribution",
+    "publishedAt":  "2026-08-19T15:21:34.3763096Z"
 }
