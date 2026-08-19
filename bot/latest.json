@@ -1,9 +1,9 @@
 {
-    "version":  "1.6.9",
+    "version":  "1.6.10",
     "packagePath":  "bot/JJBotPack.zip",
-    "sha256":  "8c707526a647b2c90649810b2596a79fb2db3c2367b4adda8cae488e8e3740d2",
+    "sha256":  "dfbf86a1f6270ee4be8c8f1076a91b61fa3f7044c8e026a7e002756ce0bfd820",
     "requiredAppVersion":  "1.1.27",
     "learningBaseVersion":  "1.6.7",
-    "notes":  "Aggressive Expansion V1 + Post-Move Exhaustion Guard + Premarket Engine",
-    "publishedAt":  "2026-08-19T17:30:13.0070259Z"
+    "notes":  "Smart Entry Guard + Weak 3/5 filter + Same-Side Loss Rearm + Global Structure Exhaustion + Adaptive Trailing",
+    "publishedAt":  "2026-08-19T18:30:36.4628267Z"
 }
