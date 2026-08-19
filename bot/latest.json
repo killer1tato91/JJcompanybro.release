@@ -1,9 +1,9 @@
 {
-    "version":  "1.6.7",
+    "version":  "1.6.9",
     "packagePath":  "bot/JJBotPack.zip",
-    "sha256":  "673136866513fc1b2c14040458729c93c78bce85747176b898a224d3a805e380",
+    "sha256":  "8c707526a647b2c90649810b2596a79fb2db3c2367b4adda8cae488e8e3740d2",
     "requiredAppVersion":  "1.1.27",
     "learningBaseVersion":  "1.6.7",
-    "notes":  "V1.6.7 EarlyMove + NoChase + clean telemetry + two-layer Learning Base/User distribution",
-    "publishedAt":  "2026-08-19T15:21:34.3763096Z"
+    "notes":  "Aggressive Expansion V1 + Post-Move Exhaustion Guard + Premarket Engine",
+    "publishedAt":  "2026-08-19T17:30:13.0070259Z"
 }
