@@ -1,7 +1,7 @@
 {
-    "version":  "1.6.17",
+    "version":  "1.6.18",
     "packagePath":  "bot/JJBotPack.zip",
-    "sha256":  "6ed0b5d1a05080760b995f1447af42eb69c773accc0d6ed6dd4d6688b4e5b717",
+    "sha256":  "bb9586e0a8c8f610c042e007804edab7209f035f0acc1fe302528d8221d248f9",
     "requiredAppVersion":  "1.1.27",
     "learningBaseVersion":  "1.6.17.20260820.181634",
     "notes":  [
@@ -13,5 +13,5 @@
                   "Premarket directional bias is available to AUTO at the opening",
                   "Preserves V1.6.10 loss rearm, global exhaustion and adaptive trailing"
               ],
-    "publishedAt":  "2026-08-20T18:16:45.4310797Z"
+    "publishedAt":  "2026-08-20T23:54:16.6016139Z"
 }
