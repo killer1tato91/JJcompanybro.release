@@ -1,96 +1,1022 @@
 {
   "schemaVersion": 1,
- "rulesVersion": "2026.07.19.3",
-  "updatedAt": "2026-07-19T18:00:00Z",
-
+  "rulesVersion": "2026.08.25.5",
+  "updatedAt": "2026-08-25T22:45:00Z",
+  "catalogMode": "MASTER_PRODUCTION_SAFE",
+  "notes": [
+    "Backward-compatible with current JJ Trading Tools accountRulesResolver schema.",
+    "Extra metadata fields are ignored by the current resolver.",
+    "Only plan/size/stage combinations containing a rules object should be auto-resolved.",
+    "Variant-heavy plans are split into distinct plan codes to avoid applying the wrong risk model."
+  ],
   "firms": {
+    "LUCID": {
+      "displayName": "Lucid Trading",
+      "aliases": [
+        "lucid",
+        "lfe",
+        "lff",
+        "lte"
+      ],
+      "plans": {
+        "LUCID_FLEX": {
+          "displayName": "Lucid Flex",
+          "aliases": [
+            "lucid flex",
+            "flex"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1250,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "drawdownLockBalance": 25100
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "minimumPayout": 500,
+                "maximumPayout": 1000,
+                "payoutPercent": 0.5,
+                "profitSplitPercent": 90,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 100,
+                "payoutBufferRequired": false,
+                "maxPayouts": 5,
+                "drawdownLockBalance": 25100
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "drawdownLockBalance": 50100
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "minimumPayout": 500,
+                "maximumPayout": 2000,
+                "payoutPercent": 0.5,
+                "profitSplitPercent": 90,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 150,
+                "payoutBufferRequired": false,
+                "maxPayouts": 5,
+                "drawdownLockBalance": 50100
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "drawdownLockBalance": 100100
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "minimumPayout": 500,
+                "maximumPayout": 2500,
+                "payoutPercent": 0.5,
+                "profitSplitPercent": 90,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 200,
+                "payoutBufferRequired": false,
+                "maxPayouts": 5,
+                "drawdownLockBalance": 100100
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "drawdownLockBalance": 150100
+              },
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "minimumPayout": 500,
+                "maximumPayout": 3000,
+                "payoutPercent": 0.5,
+                "profitSplitPercent": 90,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 250,
+                "payoutBufferRequired": false,
+                "maxPayouts": 5,
+                "drawdownLockBalance": 150100
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Lucid Help Center"
+          }
+        },
+        "LUCID_PRO_DLL_ON": {
+          "displayName": "Lucid Pro - DLL On",
+          "aliases": [
+            "lucid pro",
+            "pro"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1250,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "drawdownLockBalance": 25100
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "minimumCycleProfit": 250,
+                "minimumPayout": 500,
+                "payout1Maximum": 1000,
+                "payout2PlusMaximum": 1500,
+                "payoutBuffer": 26100,
+                "profitSplitPercent": 90
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1200,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "drawdownLockBalance": 50100
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1200,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 500,
+                "payout1Maximum": 2000,
+                "payout2PlusMaximum": 2500,
+                "payoutBuffer": 52100,
+                "profitSplitPercent": 90
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1800,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "drawdownLockBalance": 100100
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1800,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "minimumCycleProfit": 750,
+                "minimumPayout": 500,
+                "payout1Maximum": 2500,
+                "payout2PlusMaximum": 3000,
+                "payoutBuffer": 103100,
+                "profitSplitPercent": 90
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2700,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "drawdownLockBalance": 150100
+              },
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2700,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "minimumCycleProfit": 1000,
+                "minimumPayout": 500,
+                "payout1Maximum": 3000,
+                "payout2PlusMaximum": 3500,
+                "payoutBuffer": 154600,
+                "profitSplitPercent": 90
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Lucid Help Center"
+          }
+        },
+        "LUCID_PRO_DLL_OFF": {
+          "displayName": "Lucid Pro - DLL Off",
+          "aliases": [
+            "lucid pro",
+            "pro"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1250,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "drawdownLockBalance": 25100
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "minimumCycleProfit": 250,
+                "minimumPayout": 500,
+                "payout1Maximum": 1000,
+                "payout2PlusMaximum": 1500,
+                "payoutBuffer": 26100,
+                "profitSplitPercent": 90
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "drawdownLockBalance": 50100
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 500,
+                "payout1Maximum": 2000,
+                "payout2PlusMaximum": 2500,
+                "payoutBuffer": 52100,
+                "profitSplitPercent": 90
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "drawdownLockBalance": 100100
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "minimumCycleProfit": 750,
+                "minimumPayout": 500,
+                "payout1Maximum": 2500,
+                "payout2PlusMaximum": 3000,
+                "payoutBuffer": 103100,
+                "profitSplitPercent": 90
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "drawdownLockBalance": 150100
+              },
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "minimumCycleProfit": 1000,
+                "minimumPayout": 500,
+                "payout1Maximum": 3000,
+                "payout2PlusMaximum": 3500,
+                "payoutBuffer": 154600,
+                "profitSplitPercent": 90
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Lucid Help Center"
+          }
+        },
+        "LUCID_DAILY_EOD_DLL_ON": {
+          "displayName": "Lucid Daily - EOD - DLL On",
+          "aliases": [
+            "lucid daily",
+            "daily"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1250,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 600,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "drawdownLockBalance": 25100
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 600,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "minimumPayout": 500,
+                "payoutBuffer": 26100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 6000
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1200,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "drawdownLockBalance": 50100
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 1200,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "minimumPayout": 500,
+                "payoutBuffer": 52100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 8000
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1800,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "drawdownLockBalance": 100100
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 1800,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "minimumPayout": 500,
+                "payoutBuffer": 103100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 10000
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2700,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "drawdownLockBalance": 150100
+              },
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 2700,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "minimumPayout": 500,
+                "payoutBuffer": 154600,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 12000
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Lucid Help Center"
+          }
+        },
+        "LUCID_DAILY_EOD_DLL_OFF": {
+          "displayName": "Lucid Daily - EOD - DLL Off",
+          "aliases": [
+            "lucid daily",
+            "daily"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1250,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "drawdownLockBalance": 25100
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "minimumPayout": 500,
+                "payoutBuffer": 26100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 6000
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "drawdownLockBalance": 50100
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "minimumPayout": 500,
+                "payoutBuffer": 52100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 8000
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "drawdownLockBalance": 100100
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "minimumPayout": 500,
+                "payoutBuffer": 103100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 10000
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "drawdownLockBalance": 150100
+              },
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "minimumPayout": 500,
+                "payoutBuffer": 154600,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 12000
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Lucid Help Center"
+          }
+        },
+        "LUCID_DAILY_INTRADAY_DLL_ON": {
+          "displayName": "Lucid Daily - INTRADAY - DLL On",
+          "aliases": [
+            "lucid daily",
+            "daily"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1250,
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 600,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "drawdownLockBalance": 25100
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 600,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "minimumPayout": 500,
+                "payoutBuffer": 26100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 6000
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 1200,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "drawdownLockBalance": 50100
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 1200,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "minimumPayout": 500,
+                "payoutBuffer": 52100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 8000
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 1800,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "drawdownLockBalance": 100100
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 1800,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "minimumPayout": 500,
+                "payoutBuffer": 103100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 10000
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 2700,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "drawdownLockBalance": 150100
+              },
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 2700,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "minimumPayout": 500,
+                "payoutBuffer": 154600,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 12000
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Lucid Help Center"
+          }
+        },
+        "LUCID_DAILY_INTRADAY_DLL_OFF": {
+          "displayName": "Lucid Daily - INTRADAY - DLL Off",
+          "aliases": [
+            "lucid daily",
+            "daily"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1250,
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "drawdownLockBalance": 25100
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "minimumPayout": 500,
+                "payoutBuffer": 26100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 6000
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "drawdownLockBalance": 50100
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "minimumPayout": 500,
+                "payoutBuffer": 52100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 8000
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "drawdownLockBalance": 100100
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "minimumPayout": 500,
+                "payoutBuffer": 103100,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 10000
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "drawdownLockBalance": 150100
+              },
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "minimumPayout": 500,
+                "payoutBuffer": 154600,
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maximumDailyProfit": 12000
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Lucid Help Center"
+          }
+        },
+        "LUCID_MAXX": {
+          "displayName": "Lucid Maxx",
+          "aliases": [
+            "lucid maxx",
+            "maxx"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1250,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "minimumTradingDays": 5,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20
+              },
+              "live": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "minimumTradingDays": 5,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              },
+              "live": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "minimumTradingDays": 5,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60
+              },
+              "live": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "minimumTradingDays": 5,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100
+              },
+              "live": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Lucid Help Center"
+          }
+        },
+        "LUCID_DIRECT": {
+          "displayName": "Lucid Direct",
+          "aliases": [
+            "lucid direct",
+            "direct"
+          ],
+          "sizes": {
+            "25000": {
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "drawdownLockBalance": 25100,
+                "initialTrailBalance": 26100
+              }
+            },
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1200,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "drawdownLockBalance": 50100,
+                "initialTrailBalance": 52100
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 3500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2100,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "drawdownLockBalance": 100100,
+                "initialTrailBalance": 103600
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 5000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 3000,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100,
+                "drawdownLockBalance": 150100,
+                "initialTrailBalance": 155100
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Lucid Help Center"
+          }
+        }
+      }
+    },
     "TRADEIFY": {
       "displayName": "Tradeify",
-
       "aliases": [
         "tradeify",
         "tradefy",
         "tdfy"
       ],
-
       "plans": {
         "SELECT": {
-          "displayName": "Select",
-
+          "displayName": "Select Evaluation",
           "aliases": [
             "select"
           ],
-
           "sizes": {
             "25000": {
               "evaluation": {
                 "profitTarget": 1500,
                 "maximumDrawdown": 1000,
                 "drawdownType": "EOD_TRAILING",
-                "dailyLossLimit": null,
                 "consistencyPercent": 40,
-                "minimumTradingDays": 3,
-                "maxMiniContracts": 1,
-                "maxMicroContracts": 10
+                "minimumTradingDays": 3
               }
             },
-
             "50000": {
               "evaluation": {
                 "profitTarget": 3000,
                 "maximumDrawdown": 2000,
                 "drawdownType": "EOD_TRAILING",
-                "dailyLossLimit": null,
                 "consistencyPercent": 40,
-                "minimumTradingDays": 3,
-                "maxMiniContracts": 4,
-                "maxMicroContracts": 40,
-
-                "historicalVariants": [
-                  {
-                    "code": "SELECT_50K_LEGACY_2500",
-                    "profitTarget": 2500,
-                    "appliesTo": "ACCOUNTS_PURCHASED_BEFORE_DASHBOARD_CHANGE"
-                  }
-                ]
+                "minimumTradingDays": 3
               }
             },
-
             "100000": {
               "evaluation": {
                 "profitTarget": 6000,
                 "maximumDrawdown": 3000,
                 "drawdownType": "EOD_TRAILING",
-                "dailyLossLimit": null,
                 "consistencyPercent": 40,
-                "minimumTradingDays": 3,
-                "maxMiniContracts": 8,
-                "maxMicroContracts": 80
+                "minimumTradingDays": 3
               }
             },
-
             "150000": {
               "evaluation": {
                 "profitTarget": 9000,
                 "maximumDrawdown": 4500,
                 "drawdownType": "EOD_TRAILING",
-                "dailyLossLimit": null,
                 "consistencyPercent": 40,
-                "minimumTradingDays": 3,
-                "maxMiniContracts": 12,
-                "maxMicroContracts": 120
+                "minimumTradingDays": 3
               }
             }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Tradeify Help Center"
           }
         },
-
         "GROWTH": {
-          "displayName": "Growth",
-
+          "displayName": "Growth Evaluation",
           "aliases": [
             "growth"
           ],
-
           "sizes": {
             "25000": {
               "evaluation": {
@@ -99,13 +1025,9 @@
                 "drawdownType": "EOD_TRAILING",
                 "dailyLossLimit": 600,
                 "dailyLossType": "SOFT_BREACH",
-                "consistencyPercent": null,
-                "minimumTradingDays": 1,
-                "maxMiniContracts": 1,
-                "maxMicroContracts": 10
+                "minimumTradingDays": 1
               }
             },
-
             "50000": {
               "evaluation": {
                 "profitTarget": 3000,
@@ -113,13 +1035,9 @@
                 "drawdownType": "EOD_TRAILING",
                 "dailyLossLimit": 1250,
                 "dailyLossType": "SOFT_BREACH",
-                "consistencyPercent": null,
-                "minimumTradingDays": 1,
-                "maxMiniContracts": 4,
-                "maxMicroContracts": 40
+                "minimumTradingDays": 1
               }
             },
-
             "100000": {
               "evaluation": {
                 "profitTarget": 6000,
@@ -127,13 +1045,9 @@
                 "drawdownType": "EOD_TRAILING",
                 "dailyLossLimit": 2500,
                 "dailyLossType": "SOFT_BREACH",
-                "consistencyPercent": null,
-                "minimumTradingDays": 1,
-                "maxMiniContracts": 8,
-                "maxMicroContracts": 80
+                "minimumTradingDays": 1
               }
             },
-
             "150000": {
               "evaluation": {
                 "profitTarget": 9000,
@@ -141,72 +1055,2768 @@
                 "drawdownType": "EOD_TRAILING",
                 "dailyLossLimit": 3750,
                 "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 1
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Tradeify Help Center"
+          }
+        },
+        "SELECT_FLEX": {
+          "displayName": "Select Flex",
+          "aliases": [
+            "select flex"
+          ],
+          "sizes": {
+            "25000": {
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "startingMiniContracts": 1,
+                "maxMiniContracts": 1,
+                "maxMicroContracts": 10,
+                "profitSplitPercent": 90
+              }
+            },
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "startingMiniContracts": 2,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "profitSplitPercent": 90
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "startingMiniContracts": 3,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80,
+                "profitSplitPercent": 90
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "startingMiniContracts": 3,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120,
+                "profitSplitPercent": 90
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Tradeify Help Center"
+          }
+        },
+        "SELECT_DAILY": {
+          "displayName": "Select Daily",
+          "aliases": [
+            "select daily"
+          ],
+          "sizes": {
+            "25000": {
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 500,
+                "dailyLossType": "SOFT_BREACH",
+                "startingMiniContracts": 1,
+                "maxMiniContracts": 1,
+                "maxMicroContracts": 10,
+                "profitSplitPercent": 90
+              }
+            },
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1000,
+                "dailyLossType": "SOFT_BREACH",
+                "startingMiniContracts": 2,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "profitSplitPercent": 90
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1250,
+                "dailyLossType": "SOFT_BREACH",
+                "startingMiniContracts": 3,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80,
+                "profitSplitPercent": 90
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1750,
+                "dailyLossType": "SOFT_BREACH",
+                "startingMiniContracts": 3,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120,
+                "profitSplitPercent": 90
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Tradeify Help Center"
+          }
+        },
+        "LIGHTNING": {
+          "displayName": "Lightning Funded",
+          "aliases": [
+            "lightning",
+            "lightning funded"
+          ],
+          "sizes": {
+            "25000": {
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": null,
+                "dailyLossType": null,
+                "consistencySchedulePercent": [
+                  20,
+                  25,
+                  30
+                ],
+                "maxMiniContracts": 1,
+                "maxMicroContracts": 10,
+                "minimumPayout": 1000,
+                "payout1ProfitGoal": 1500,
+                "payout2PlusProfitGoal": 1000,
+                "maximumPayoutByCycle": [
+                  1000,
+                  1000,
+                  1000,
+                  1000
+                ],
+                "profitSplitPercent": 90,
+                "minimumTradingDaysForPayout": 0
+              }
+            },
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 1250,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencySchedulePercent": [
+                  20,
+                  25,
+                  30
+                ],
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "minimumPayout": 1000,
+                "payout1ProfitGoal": 3000,
+                "payout2PlusProfitGoal": 2000,
+                "maximumPayoutByCycle": [
+                  2000,
+                  2000,
+                  2000,
+                  2500
+                ],
+                "profitSplitPercent": 90,
+                "minimumTradingDaysForPayout": 0
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 4000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 2500,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencySchedulePercent": [
+                  20,
+                  25,
+                  30
+                ],
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80,
+                "minimumPayout": 1000,
+                "payout1ProfitGoal": 6000,
+                "payout2PlusProfitGoal": 3500,
+                "maximumPayoutByCycle": [
+                  2500,
+                  2500,
+                  2500,
+                  3000
+                ],
+                "profitSplitPercent": 90,
+                "minimumTradingDaysForPayout": 0
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 5250,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 3000,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencySchedulePercent": [
+                  20,
+                  25,
+                  30
+                ],
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120,
+                "minimumPayout": 1000,
+                "payout1ProfitGoal": 9000,
+                "payout2PlusProfitGoal": 4500,
+                "maximumPayoutByCycle": [
+                  3000,
+                  3000,
+                  3000,
+                  3500
+                ],
+                "profitSplitPercent": 90,
+                "minimumTradingDaysForPayout": 0
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "sourceSet": "official Tradeify Help Center",
+            "legacyNote": "150K Lightning purchases before Mar 31 use $3,750 DLL."
+          }
+        },
+        "LIGHTNING_150K_LEGACY_DLL": {
+          "displayName": "Lightning 150K (Legacy DLL)",
+          "aliases": [
+            "lightning legacy 150k"
+          ],
+          "sizes": {
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 5250,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 3750,
+                "dailyLossType": "SOFT_BREACH",
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120,
+                "minimumPayout": 1000,
+                "profitSplitPercent": 90
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "legacy": true,
+            "note": "150K Lightning purchases made before March 31 use $3,750 DLL."
+          }
+        }
+      }
+    },
+    "TOPSTEP": {
+      "displayName": "Topstep",
+      "aliases": [
+        "topstep",
+        "trading combine",
+        "express funded",
+        "xfa"
+      ],
+      "plans": {
+        "TRADING_COMBINE": {
+          "displayName": "Trading Combine",
+          "aliases": [
+            "combine",
+            "trading combine"
+          ],
+          "sizes": {
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "maxMiniContracts": 5,
+                "maxMicroContracts": 50
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "maxMiniContracts": 15,
+                "maxMicroContracts": 150
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Topstep Help Center"
+          }
+        },
+        "XFA_STANDARD": {
+          "displayName": "Express Funded Standard",
+          "aliases": [
+            "xfa standard"
+          ],
+          "sizes": {
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "maximumPayout": 2000,
+                "payoutPercent": 0.5
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "maximumPayout": 3000,
+                "payoutPercent": 0.5
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "maximumPayout": 5000,
+                "payoutPercent": 0.5
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Topstep Help Center"
+          }
+        },
+        "XFA_CONSISTENCY": {
+          "displayName": "Express Funded Consistency",
+          "aliases": [
+            "xfa consistency"
+          ],
+          "sizes": {
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "minimumTradingDays": 3,
+                "maximumPayout": 3000,
+                "payoutPercent": 0.5
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "minimumTradingDays": 3,
+                "maximumPayout": 4000,
+                "payoutPercent": 0.5
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "minimumTradingDays": 3,
+                "maximumPayout": 6000,
+                "payoutPercent": 0.5
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Topstep Help Center"
+          }
+        },
+        "LIVE_FUNDED": {
+          "displayName": "Live Funded Account",
+          "aliases": [
+            "live funded",
+            "lfa"
+          ],
+          "sizes": {
+            "50000": {
+              "live": {
+                "dailyLossLimit": 2000,
+                "drawdownType": "LIVE_RISK",
+                "profitTargetForReserveUnlock": 3000
+              }
+            },
+            "100000": {
+              "live": {
+                "dailyLossLimit": 3000,
+                "drawdownType": "LIVE_RISK",
+                "profitTargetForReserveUnlock": 6000
+              }
+            },
+            "150000": {
+              "live": {
+                "dailyLossLimit": 4500,
+                "drawdownType": "LIVE_RISK",
+                "profitTargetForReserveUnlock": 9000
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Topstep Help Center"
+          }
+        }
+      }
+    },
+    "TPT": {
+      "displayName": "Take Profit Trader",
+      "aliases": [
+        "take profit trader",
+        "tpt"
+      ],
+      "plans": {
+        "TEST": {
+          "displayName": "Test",
+          "aliases": [
+            "test",
+            "evaluation",
+            "tpt test"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1500,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "consistencyRule": "HIGHEST_DAY_LT_50_PERCENT_OF_TOTAL_NET_PNL",
+                "minimumTradingDays": 3,
+                "maxMiniContracts": 3,
+                "maxMicroContracts": 30,
+                "newsTradingAllowed": true,
+                "overnightPositionsAllowed": false
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "consistencyRule": "HIGHEST_DAY_LT_50_PERCENT_OF_TOTAL_NET_PNL",
+                "minimumTradingDays": 3,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "newsTradingAllowed": true,
+                "overnightPositionsAllowed": false
+              }
+            },
+            "75000": {
+              "evaluation": {
+                "profitTarget": 4500,
+                "maximumDrawdown": 2500,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "consistencyRule": "HIGHEST_DAY_LT_50_PERCENT_OF_TOTAL_NET_PNL",
+                "minimumTradingDays": 3,
+                "maxMiniContracts": 9,
+                "maxMicroContracts": 90,
+                "newsTradingAllowed": true,
+                "overnightPositionsAllowed": false
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "consistencyRule": "HIGHEST_DAY_LT_50_PERCENT_OF_TOTAL_NET_PNL",
+                "minimumTradingDays": 3,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120,
+                "newsTradingAllowed": true,
+                "overnightPositionsAllowed": false
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "consistencyRule": "HIGHEST_DAY_LT_50_PERCENT_OF_TOTAL_NET_PNL",
+                "minimumTradingDays": 3,
+                "maxMiniContracts": 15,
+                "maxMicroContracts": 150,
+                "newsTradingAllowed": true,
+                "overnightPositionsAllowed": false
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "effectiveFrom": "2026-08-17",
+            "note": "New tests purchased Aug 17, 2026+ use 3 minimum trading days. Existing tests/resets remain 5 days.",
+            "sourceSet": "official TakeProfitTrader Help Center"
+          }
+        },
+        "PRO": {
+          "displayName": "PRO",
+          "aliases": [
+            "pro",
+            "tpt pro"
+          ],
+          "sizes": {
+            "25000": {
+              "funded": {
+                "maximumDrawdown": 1500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
                 "consistencyPercent": null,
+                "maxMiniContracts": 3,
+                "maxMicroContracts": 30,
+                "payoutFrequency": "DAILY",
+                "minimumTradingDays": 0,
+                "payoutBuffer": 1500,
+                "payoutBufferBalance": 26500,
+                "payoutBufferRequired": true,
+                "profitSplitPercent": 80,
+                "weeklyTradingRequirementDays": 1,
+                "prohibitedNewsRestriction": true
+              }
+            },
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "payoutFrequency": "DAILY",
+                "minimumTradingDays": 0,
+                "payoutBuffer": 2000,
+                "payoutBufferBalance": 52000,
+                "payoutBufferRequired": true,
+                "profitSplitPercent": 80,
+                "weeklyTradingRequirementDays": 1,
+                "prohibitedNewsRestriction": true
+              }
+            },
+            "75000": {
+              "funded": {
+                "maximumDrawdown": 2500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "maxMiniContracts": 9,
+                "maxMicroContracts": 90,
+                "payoutFrequency": "DAILY",
+                "minimumTradingDays": 0,
+                "payoutBuffer": 2500,
+                "payoutBufferBalance": 77500,
+                "payoutBufferRequired": true,
+                "profitSplitPercent": 80,
+                "weeklyTradingRequirementDays": 1,
+                "prohibitedNewsRestriction": true
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120,
+                "payoutFrequency": "DAILY",
+                "minimumTradingDays": 0,
+                "payoutBuffer": 3000,
+                "payoutBufferBalance": 103000,
+                "payoutBufferRequired": true,
+                "profitSplitPercent": 80,
+                "weeklyTradingRequirementDays": 1,
+                "prohibitedNewsRestriction": true
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "maxMiniContracts": 15,
+                "maxMicroContracts": 150,
+                "payoutFrequency": "DAILY",
+                "minimumTradingDays": 0,
+                "payoutBuffer": 4500,
+                "payoutBufferBalance": 154500,
+                "payoutBufferRequired": true,
+                "profitSplitPercent": 80,
+                "weeklyTradingRequirementDays": 1,
+                "prohibitedNewsRestriction": true
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "sourceSet": "official TakeProfitTrader Help Center"
+          }
+        },
+        "PRO_PLUS": {
+          "displayName": "PRO+",
+          "aliases": [
+            "pro+",
+            "pro plus",
+            "tpt pro+"
+          ],
+          "sizes": {
+            "25000": {
+              "live": {
+                "maximumDrawdown": 1500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "maxMiniContracts": 3,
+                "maxMicroContracts": 30,
+                "payoutFrequency": "DAILY",
+                "minimumTradingDays": 0,
+                "payoutBufferRequired": false,
+                "profitSplitPercent": 90,
+                "weeklyTradingRequirementDays": 1
+              }
+            },
+            "50000": {
+              "live": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "payoutFrequency": "DAILY",
+                "minimumTradingDays": 0,
+                "payoutBufferRequired": false,
+                "profitSplitPercent": 90,
+                "weeklyTradingRequirementDays": 1
+              }
+            },
+            "75000": {
+              "live": {
+                "maximumDrawdown": 2500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "maxMiniContracts": 9,
+                "maxMicroContracts": 90,
+                "payoutFrequency": "DAILY",
+                "minimumTradingDays": 0,
+                "payoutBufferRequired": false,
+                "profitSplitPercent": 90,
+                "weeklyTradingRequirementDays": 1
+              }
+            },
+            "100000": {
+              "live": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120,
+                "payoutFrequency": "DAILY",
+                "minimumTradingDays": 0,
+                "payoutBufferRequired": false,
+                "profitSplitPercent": 90,
+                "weeklyTradingRequirementDays": 1
+              }
+            },
+            "150000": {
+              "live": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "maxMiniContracts": 15,
+                "maxMicroContracts": 150,
+                "payoutFrequency": "DAILY",
+                "minimumTradingDays": 0,
+                "payoutBufferRequired": false,
+                "profitSplitPercent": 90,
+                "weeklyTradingRequirementDays": 1
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "sourceSet": "official TakeProfitTrader Help Center",
+            "note": "PRO+ is invitation/live-market stage."
+          }
+        },
+        "TEST_LEGACY_5_DAY": {
+          "displayName": "Test (Legacy 5-Day)",
+          "aliases": [
+            "legacy test",
+            "5 day test"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1500,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "consistencyRule": "HIGHEST_DAY_LT_50_PERCENT_OF_TOTAL_NET_PNL",
+                "minimumTradingDays": 5,
+                "maxMiniContracts": 3,
+                "maxMicroContracts": 30,
+                "newsTradingAllowed": true,
+                "overnightPositionsAllowed": false
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "consistencyRule": "HIGHEST_DAY_LT_50_PERCENT_OF_TOTAL_NET_PNL",
+                "minimumTradingDays": 5,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "newsTradingAllowed": true,
+                "overnightPositionsAllowed": false
+              }
+            },
+            "75000": {
+              "evaluation": {
+                "profitTarget": 4500,
+                "maximumDrawdown": 2500,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "consistencyRule": "HIGHEST_DAY_LT_50_PERCENT_OF_TOTAL_NET_PNL",
+                "minimumTradingDays": 5,
+                "maxMiniContracts": 9,
+                "maxMicroContracts": 90,
+                "newsTradingAllowed": true,
+                "overnightPositionsAllowed": false
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "consistencyRule": "HIGHEST_DAY_LT_50_PERCENT_OF_TOTAL_NET_PNL",
+                "minimumTradingDays": 5,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120,
+                "newsTradingAllowed": true,
+                "overnightPositionsAllowed": false
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "consistencyRule": "HIGHEST_DAY_LT_50_PERCENT_OF_TOTAL_NET_PNL",
+                "minimumTradingDays": 5,
+                "maxMiniContracts": 15,
+                "maxMicroContracts": 150,
+                "newsTradingAllowed": true,
+                "overnightPositionsAllowed": false
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "legacy": true,
+            "effectiveTo": "2026-08-16",
+            "note": "For tests purchased before Aug 17, 2026 and resets tied to those tests.",
+            "sourceSet": "official TakeProfitTrader Help Center"
+          }
+        }
+      }
+    },
+    "MFFU": {
+      "displayName": "My Funded Futures",
+      "aliases": [
+        "mffu",
+        "my funded futures",
+        "myfundedfutures"
+      ],
+      "plans": {
+        "RAPID": {
+          "displayName": "Rapid",
+          "aliases": [
+            "rapid"
+          ],
+          "sizes": {
+            "25000": {
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "payoutBuffer": 1100,
+                "minimumPayout": 500
+              },
+              "live": {
+                "startingBalance": 0,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "DAILY",
+                "payoutBufferRequired": false
+              }
+            },
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "payoutBuffer": 2100,
+                "minimumPayout": 500
+              },
+              "live": {
+                "startingBalance": 0,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "DAILY",
+                "payoutBufferRequired": false
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "payoutBuffer": 3100,
+                "minimumPayout": 500
+              },
+              "live": {
+                "startingBalance": 0,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "DAILY",
+                "payoutBufferRequired": false
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "payoutFrequency": "DAILY",
+                "profitSplitPercent": 90,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80,
+                "payoutBuffer": 4600,
+                "minimumPayout": 500
+              },
+              "live": {
+                "startingBalance": 0,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "DAILY",
+                "payoutBufferRequired": false
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official MFFU Help Center"
+          }
+        },
+        "FLEX_25K_LEGACY": {
+          "displayName": "Flex 25K (Legacy/Discontinued)",
+          "aliases": [
+            "flex 25k"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20
+              },
+              "funded": {
+                "startingBalance": 0,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 100,
+                "minimumPayout": 250,
+                "maximumPayout": 1000,
+                "payoutPercent": 0.5,
+                "profitSplitPercent": 80,
+                "maxPayouts": 5
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "legacy": true,
+            "discontinuedEffective": "2026-08-05"
+          }
+        },
+        "PRO": {
+          "displayName": "Pro",
+          "aliases": [
+            "pro"
+          ],
+          "sizes": {
+            "50000": {
+              "evaluation": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 5,
+                "maxMicroContracts": 5,
+                "payoutBuffer": 2100,
+                "minimumPayout": 1000,
+                "maximumPayout": 100000,
+                "payoutFrequencyDays": 14,
+                "profitSplitPercent": 80
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 10,
+                "payoutBuffer": 3100,
+                "minimumPayout": 1000,
+                "maximumPayout": 100000,
+                "payoutFrequencyDays": 14,
+                "profitSplitPercent": 80
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 50,
+                "minimumTradingDays": 2
+              },
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 15,
+                "maxMicroContracts": 15,
+                "payoutBuffer": 4600,
+                "minimumPayout": 1000,
+                "maximumPayout": 100000,
+                "payoutFrequencyDays": 14,
+                "profitSplitPercent": 80
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official MFFU Help Center"
+          }
+        }
+      }
+    },
+    "FUNDEDNEXT": {
+      "displayName": "FundedNext Futures",
+      "aliases": [
+        "fundednext",
+        "fundednext futures",
+        "fn futures"
+      ],
+      "plans": {
+        "RAPID_PRO": {
+          "displayName": "Rapid Pro",
+          "aliases": [
+            "rapid pro"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
                 "minimumTradingDays": 1,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "maximumPayout": 800,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "EVERY_3_DAYS"
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "maximumPayout": 1200,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "EVERY_3_DAYS"
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 5000,
+                "maximumDrawdown": 2500,
+                "drawdownType": "EOD_TRAILING",
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60
+              },
+              "funded": {
+                "maximumDrawdown": 2500,
+                "drawdownType": "EOD_TRAILING",
+                "consistencyPercent": 40,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "maximumPayout": 2500,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "EVERY_3_DAYS"
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official FundedNext Futures Help Center"
+          }
+        },
+        "RAPID_PRO_DLL": {
+          "displayName": "Rapid Pro + DLL",
+          "aliases": [
+            "rapid pro dll"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 500,
+                "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 500,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 40,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "maximumPayout": 800,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "EVERY_3_DAYS"
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1000,
+                "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1000,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 40,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "maximumPayout": 1200,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "EVERY_3_DAYS"
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 5000,
+                "maximumDrawdown": 2500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1250,
+                "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60
+              },
+              "funded": {
+                "maximumDrawdown": 2500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1250,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 40,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "maximumPayout": 2500,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "EVERY_3_DAYS"
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official FundedNext Futures Help Center"
+          }
+        },
+        "RAPID_DAILY": {
+          "displayName": "Rapid Daily",
+          "aliases": [
+            "rapid daily"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 500,
+                "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 500,
+                "dailyLossType": "SOFT_BREACH",
+                "payoutBuffer": 26100,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "maximumPayout": 800,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "DAILY"
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1000,
+                "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1000,
+                "dailyLossType": "SOFT_BREACH",
+                "payoutBuffer": 52100,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "maximumPayout": 1200,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "DAILY"
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 5000,
+                "maximumDrawdown": 2500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1250,
+                "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60
+              },
+              "funded": {
+                "maximumDrawdown": 2500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1250,
+                "dailyLossType": "SOFT_BREACH",
+                "payoutBuffer": 102600,
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "maximumPayout": 2500,
+                "profitSplitPercent": 90,
+                "payoutFrequency": "DAILY"
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official FundedNext Futures Help Center"
+          }
+        },
+        "FLEX": {
+          "displayName": "Flex",
+          "aliases": [
+            "flex"
+          ],
+          "sizes": {
+            "50000": {
+              "evaluation": {
+                "profitTarget": 2500,
+                "maximumDrawdown": 1500,
+                "drawdownType": "TRAILING",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 3,
+                "maxMicroContracts": 30,
+                "drawdownLockBalance": 50100
+              },
+              "funded": {
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 200,
+                "maximumPayout": 1500,
+                "payoutPercent": 0.5,
+                "profitSplitPercent": 95,
+                "drawdownLockBalance": 50100
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 5000,
+                "maximumDrawdown": 2500,
+                "drawdownType": "TRAILING",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 5,
+                "maxMicroContracts": 50,
+                "drawdownLockBalance": 100100
+              },
+              "funded": {
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 200,
+                "maximumPayout": 2500,
+                "payoutPercent": 0.5,
+                "profitSplitPercent": 95,
+                "drawdownLockBalance": 100100
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 8000,
+                "maximumDrawdown": 4000,
+                "drawdownType": "TRAILING",
+                "consistencyPercent": 40,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80,
+                "drawdownLockBalance": 150100
+              },
+              "funded": {
+                "minimumCycleProfit": 500,
+                "minimumPayout": 250,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 250,
+                "maximumPayout": 4000,
+                "payoutPercent": 0.5,
+                "profitSplitPercent": 95,
+                "drawdownLockBalance": 150100
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official FundedNext Futures Help Center"
+          }
+        },
+        "RAPID_LEGACY": {
+          "displayName": "Rapid Legacy",
+          "aliases": [
+            "rapid legacy"
+          ],
+          "sizes": {},
+          "_meta": {
+            "legacy": true,
+            "newPurchasesEnded": "2026-07-10",
+            "resolverEnabled": false
+          }
+        },
+        "BOLT_LEGACY": {
+          "displayName": "Bolt Legacy",
+          "aliases": [
+            "bolt",
+            "bolt legacy"
+          ],
+          "sizes": {},
+          "_meta": {
+            "legacy": true,
+            "newPurchasesEnded": "2026-07-10",
+            "resolverEnabled": false
+          }
+        }
+      }
+    },
+    "APEX": {
+      "displayName": "Apex Trader Funding",
+      "aliases": [
+        "apex",
+        "pa-apex",
+        "apex trader funding"
+      ],
+      "plans": {
+        "EOD_EVALUATION": {
+          "displayName": "Eod Evaluation",
+          "aliases": [
+            "apex eod"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 500,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "minimumTradingDays": 0,
+                "accessPeriodDays": 30
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1000,
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "minimumTradingDays": 0,
+                "accessPeriodDays": 30
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1500,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80,
+                "minimumTradingDays": 0,
+                "accessPeriodDays": 30
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2000,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120,
+                "minimumTradingDays": 0,
+                "accessPeriodDays": 30
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Apex Help Center"
+          }
+        },
+        "INTRADAY_EVALUATION": {
+          "displayName": "Intraday Evaluation",
+          "aliases": [
+            "apex intraday"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "minimumTradingDays": 0,
+                "accessPeriodDays": 30
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 6,
+                "maxMicroContracts": 60,
+                "minimumTradingDays": 0,
+                "accessPeriodDays": 30
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80,
+                "minimumTradingDays": 0,
+                "accessPeriodDays": 30
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120,
+                "minimumTradingDays": 0,
+                "accessPeriodDays": 30
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Apex Help Center"
+          }
+        },
+        "EOD_PA": {
+          "displayName": "Eod Performance Account",
+          "aliases": [
+            "apex eod pa"
+          ],
+          "sizes": {
+            "25000": {
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "tierBasedScaling": true,
+                "consistencyPercent": 50,
+                "minimumPayout": 500,
+                "qualifyingTradingDays": 5,
+                "maxPayouts": 6,
+                "profitSplitPercent": 100,
+                "safetyNet": 26100
+              }
+            },
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "tierBasedScaling": true,
+                "consistencyPercent": 50,
+                "minimumPayout": 500,
+                "qualifyingTradingDays": 5,
+                "maxPayouts": 6,
+                "profitSplitPercent": 100,
+                "safetyNet": 52100
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "tierBasedScaling": true,
+                "consistencyPercent": 50,
+                "minimumPayout": 500,
+                "qualifyingTradingDays": 5,
+                "maxPayouts": 6,
+                "profitSplitPercent": 100,
+                "safetyNet": 103100
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 4000,
+                "drawdownType": "EOD_TRAILING",
+                "tierBasedScaling": true,
+                "consistencyPercent": 50,
+                "minimumPayout": 500,
+                "qualifyingTradingDays": 5,
+                "maxPayouts": 6,
+                "profitSplitPercent": 100,
+                "safetyNet": 154100
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Apex Help Center"
+          }
+        },
+        "INTRADAY_PA": {
+          "displayName": "Intraday Performance Account",
+          "aliases": [
+            "apex intraday pa"
+          ],
+          "sizes": {
+            "25000": {
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "tierBasedScaling": true,
+                "consistencyPercent": 50,
+                "minimumPayout": 500,
+                "qualifyingTradingDays": 5,
+                "maxPayouts": 6,
+                "profitSplitPercent": 100,
+                "safetyNet": 26100
+              }
+            },
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "tierBasedScaling": true,
+                "consistencyPercent": 50,
+                "minimumPayout": 500,
+                "qualifyingTradingDays": 5,
+                "maxPayouts": 6,
+                "profitSplitPercent": 100,
+                "safetyNet": 52100
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "tierBasedScaling": true,
+                "consistencyPercent": 50,
+                "minimumPayout": 500,
+                "qualifyingTradingDays": 5,
+                "maxPayouts": 6,
+                "profitSplitPercent": 100,
+                "safetyNet": 103100
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 4000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "tierBasedScaling": true,
+                "consistencyPercent": 50,
+                "minimumPayout": 500,
+                "qualifyingTradingDays": 5,
+                "maxPayouts": 6,
+                "profitSplitPercent": 100,
+                "safetyNet": 154100
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Apex Help Center"
+          }
+        },
+        "LEGACY_PA": {
+          "displayName": "Legacy Performance Account",
+          "aliases": [
+            "legacy pa"
+          ],
+          "sizes": {},
+          "_meta": {
+            "legacy": true,
+            "resolverEnabled": false,
+            "note": "Retained for old 250K/300K/100K Static accounts."
+          }
+        }
+      }
+    },
+    "BULENOX": {
+      "displayName": "Bulenox",
+      "aliases": [
+        "bulenox"
+      ],
+      "plans": {
+        "QUALIFICATION_TRAILING": {
+          "displayName": "Qualification TRAILING",
+          "aliases": [
+            "qualification"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 3,
+                "maxMicroContracts": 30
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 7,
+                "maxMicroContracts": 70
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 15,
+                "maxMicroContracts": 150
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Bulenox Help Center"
+          }
+        },
+        "QUALIFICATION_EOD": {
+          "displayName": "Qualification EOD",
+          "aliases": [
+            "qualification"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 500,
+                "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 3,
+                "maxMicroContracts": 30
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1100,
+                "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 7,
+                "maxMicroContracts": 70
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2200,
+                "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 3300,
+                "dailyLossType": "SOFT_BREACH",
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 15,
+                "maxMicroContracts": 150
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Bulenox Help Center"
+          }
+        },
+        "FAST_TRACK_TRAILING": {
+          "displayName": "Fast Track TRAILING",
+          "aliases": [
+            "fast track"
+          ],
+          "sizes": {
+            "25000": {
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 3,
+                "maxMicroContracts": 30
+              }
+            },
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2250,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 7,
+                "maxMicroContracts": 70
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 4000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 5500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "maxMiniContracts": 15,
+                "maxMicroContracts": 150
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Bulenox Help Center"
+          }
+        },
+        "FAST_TRACK_EOD": {
+          "displayName": "Fast Track EOD",
+          "aliases": [
+            "fast track"
+          ],
+          "sizes": {
+            "25000": {
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20
+              }
+            },
+            "50000": {
+              "funded": {
+                "maximumDrawdown": 2250,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1200,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              }
+            },
+            "100000": {
+              "funded": {
+                "maximumDrawdown": 4000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2500,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80
+              }
+            },
+            "150000": {
+              "funded": {
+                "maximumDrawdown": 5500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 3300,
                 "maxMiniContracts": 12,
                 "maxMicroContracts": 120
               }
             }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official Bulenox Help Center"
+          }
+        },
+        "MOMENTUM": {
+          "displayName": "Momentum",
+          "aliases": [
+            "momentum"
+          ],
+          "sizes": {},
+          "_meta": {
+            "resolverEnabled": false,
+            "note": "Plan exists; exact current variant should be selected as Trailing/EOD before auto-resolution."
+          }
+        },
+        "MASTER": {
+          "displayName": "Master",
+          "aliases": [
+            "master"
+          ],
+          "sizes": {},
+          "_meta": {
+            "resolverEnabled": false,
+            "note": "Funded-stage rules depend on originating plan/risk model."
           }
         }
       }
     },
-
-    "LUCID": {
-      "displayName": "Lucid Trading",
-      "aliases": ["lucid", "lfe", "lff", "lte"],
-      "plans": {}
-    },
-
- "MFFU": {
-  "displayName": "My Funded Futures",
-  "aliases": [
-    "mffu",
-    "myfundedfutures",
-    "my funded futures"
-  ],
-  "plans": {
-    "RAPID": {
-      "displayName": "Rapid",
+    "EARN2TRADE": {
+      "displayName": "Earn2Trade",
       "aliases": [
-        "rapid",
-        "rpd"
+        "earn2trade",
+        "e2t"
       ],
-      "sizes": {
-        "25000": {
-          "evaluation": {
-            "profitTarget": 1500,
-            "maximumDrawdown": 1000,
-            "drawdownType": "EOD_TRAILING",
-            "dailyLossLimit": null,
-            "consistencyPercent": 50,
-            "minimumTradingDays": 2,
-            "maxMiniContracts": 3,
-            "maxMicroContracts": 30,
-            "drawdownLockBalance": 25100
+      "plans": {
+        "TCP25": {
+          "displayName": "TCP25",
+          "aliases": [
+            "tcp25",
+            "tcp 25"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1750,
+                "maximumDrawdown": 1500,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": 550,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": 30,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 3,
+                "newsTradingAllowed": true,
+                "positionsCloseBy": "15:50 CT"
+              },
+              "funded": {
+                "profitTarget": 1750,
+                "maximumDrawdown": 1500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 550,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 3,
+                "minimumPayout": 100,
+                "payoutFrequency": "WEEKLY"
+              },
+              "live": {
+                "profitTarget": 1750,
+                "maximumDrawdown": 1500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 550,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 3,
+                "minimumPayout": 100,
+                "payoutFrequency": "WEEKLY"
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "sourceSet": "official Earn2Trade website + Help Center"
+          }
+        },
+        "TCP50": {
+          "displayName": "TCP50",
+          "aliases": [
+            "tcp50",
+            "tcp 50"
+          ],
+          "sizes": {
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": 1100,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": 30,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 6,
+                "newsTradingAllowed": true,
+                "positionsCloseBy": "15:50 CT"
+              },
+              "funded": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1100,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 6,
+                "minimumPayout": 100,
+                "payoutFrequency": "WEEKLY"
+              },
+              "live": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 1100,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 6,
+                "minimumPayout": 100,
+                "payoutFrequency": "WEEKLY"
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "sourceSet": "official Earn2Trade website + Help Center"
+          }
+        },
+        "TCP100": {
+          "displayName": "TCP100",
+          "aliases": [
+            "tcp100",
+            "tcp 100"
+          ],
+          "sizes": {
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3500,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": 2200,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": 30,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 12,
+                "newsTradingAllowed": true,
+                "positionsCloseBy": "15:50 CT"
+              },
+              "funded": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2200,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 12,
+                "minimumPayout": 100,
+                "payoutFrequency": "WEEKLY"
+              },
+              "live": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 2200,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 12,
+                "minimumPayout": 100,
+                "payoutFrequency": "WEEKLY"
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "sourceSet": "official Earn2Trade website + Help Center"
+          }
+        },
+        "GAUNTLET_MINI_50K": {
+          "displayName": "Gauntlet Mini 50K",
+          "aliases": [
+            "gauntlet mini",
+            "gau50",
+            "gm 50k"
+          ],
+          "sizes": {
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": 1100,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": 30,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 6,
+                "newsTradingAllowed": true,
+                "positionsCloseBy": "15:50 CT"
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1100,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 6,
+                "minimumPayout": 100,
+                "maximumPayout": 5000,
+                "payoutFrequency": "WEEKLY",
+                "profitSplitTier1Percent": 50,
+                "profitSplitTier2Percent": 80,
+                "profitSplitTier2Threshold": 2250
+              },
+              "live": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 1100,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 6,
+                "minimumPayout": 100,
+                "payoutFrequency": "WEEKLY",
+                "profitSplitTier1Percent": 50,
+                "profitSplitTier2Percent": 80,
+                "profitSplitTier2Threshold": 2250
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "sourceSet": "official Earn2Trade website + Help Center"
+          }
+        },
+        "GAUNTLET_MINI_100K": {
+          "displayName": "Gauntlet Mini 100K",
+          "aliases": [
+            "gauntlet mini",
+            "gau100",
+            "gm 100k"
+          ],
+          "sizes": {
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3500,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": 2200,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": 30,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 12,
+                "newsTradingAllowed": true,
+                "positionsCloseBy": "15:50 CT"
+              },
+              "funded": {
+                "maximumDrawdown": 3500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2200,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 12,
+                "minimumPayout": 100,
+                "maximumPayout": 5000,
+                "payoutFrequency": "WEEKLY",
+                "profitSplitTier1Percent": 50,
+                "profitSplitTier2Percent": 80,
+                "profitSplitTier2Threshold": 3000
+              },
+              "live": {
+                "maximumDrawdown": 3500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 2200,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 12,
+                "minimumPayout": 100,
+                "payoutFrequency": "WEEKLY",
+                "profitSplitTier1Percent": 50,
+                "profitSplitTier2Percent": 80,
+                "profitSplitTier2Threshold": 3000
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "sourceSet": "official Earn2Trade website + Help Center"
+          }
+        },
+        "GAUNTLET_MINI_150K": {
+          "displayName": "Gauntlet Mini 150K",
+          "aliases": [
+            "gauntlet mini",
+            "gau150",
+            "gm 150k"
+          ],
+          "sizes": {
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": 3300,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": 30,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 15,
+                "newsTradingAllowed": true,
+                "positionsCloseBy": "15:50 CT"
+              },
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 3300,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 15,
+                "minimumPayout": 100,
+                "maximumPayout": 5000,
+                "payoutFrequency": "WEEKLY",
+                "profitSplitTier1Percent": 50,
+                "profitSplitTier2Percent": 80,
+                "profitSplitTier2Threshold": 4000
+              },
+              "live": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 3300,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 15,
+                "minimumPayout": 100,
+                "payoutFrequency": "WEEKLY",
+                "profitSplitTier1Percent": 50,
+                "profitSplitTier2Percent": 80,
+                "profitSplitTier2Threshold": 4000
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "sourceSet": "official Earn2Trade website + Help Center"
+          }
+        },
+        "GAUNTLET_MINI_200K": {
+          "displayName": "Gauntlet Mini 200K",
+          "aliases": [
+            "gauntlet mini",
+            "gau200",
+            "gm 200k"
+          ],
+          "sizes": {
+            "200000": {
+              "evaluation": {
+                "profitTarget": 11000,
+                "maximumDrawdown": 6000,
+                "drawdownType": "EOD_TRAILING",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": 4400,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": 30,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 16,
+                "newsTradingAllowed": true,
+                "positionsCloseBy": "15:50 CT"
+              },
+              "funded": {
+                "maximumDrawdown": 6000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 4400,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 16,
+                "minimumPayout": 100,
+                "maximumPayout": 5000,
+                "payoutFrequency": "WEEKLY",
+                "profitSplitTier1Percent": 50,
+                "profitSplitTier2Percent": 80,
+                "profitSplitTier2Threshold": 5000
+              },
+              "live": {
+                "maximumDrawdown": 6000,
+                "drawdownType": "INTRADAY_TRAILING",
+                "dailyLossLimit": 4400,
+                "dailyLossType": "HARD_BREACH",
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 16,
+                "minimumPayout": 100,
+                "payoutFrequency": "WEEKLY",
+                "profitSplitTier1Percent": 50,
+                "profitSplitTier2Percent": 80,
+                "profitSplitTier2Threshold": 5000
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "sourceSet": "official Earn2Trade website + Help Center"
+          }
+        }
+      }
+    },
+    "E8": {
+      "displayName": "E8 Markets Futures",
+      "aliases": [
+        "e8",
+        "e8 markets",
+        "e8 futures"
+      ],
+      "plans": {
+        "SIGNATURE_FUTURES": {
+          "displayName": "E8 Signature Futures",
+          "aliases": [
+            "signature futures",
+            "e8 signature"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 500,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 35,
+                "minimumPayout": 100,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 75,
+                "payoutBuffer": 1000,
+                "maxPayouts": 5,
+                "profitSplitPercent": 80,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20
+              }
+            },
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              },
+              "funded": {
+                "maximumDrawdown": 2000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 1000,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 35,
+                "minimumPayout": 100,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 150,
+                "payoutBuffer": 2000,
+                "maxPayouts": 5,
+                "profitSplitPercent": 80,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6000,
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 2000,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 35,
+                "minimumPayout": 100,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 300,
+                "payoutBuffer": 3000,
+                "maxPayouts": 5,
+                "profitSplitPercent": 80,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80
+              }
+            },
+            "150000": {
+              "evaluation": {
+                "profitTarget": 9000,
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120
+              },
+              "funded": {
+                "maximumDrawdown": 4500,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": 3000,
+                "dailyLossType": "SOFT_BREACH",
+                "consistencyPercent": 35,
+                "minimumPayout": 100,
+                "qualifyingTradingDays": 5,
+                "qualifyingDayProfit": 450,
+                "payoutBuffer": 4500,
+                "maxPayouts": 5,
+                "profitSplitPercent": 80,
+                "maxMiniContracts": 12,
+                "maxMicroContracts": 120
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "sourceSet": "official E8 Futures Help Center",
+            "effectiveRulesNote": "5-payout cycle rules apply to Signature Futures purchased after 2026-07-14 20:00 UTC+2."
+          }
+        },
+        "ZERO_STARTER": {
+          "displayName": "E8 Zero Starter",
+          "aliases": [
+            "e8 zero",
+            "zero starter"
+          ],
+          "sizes": {
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 1500,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 40,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              },
+              "funded": {
+                "maximumDrawdown": 1500,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "minimumProfitableDays": 0,
+                "minimumPayout": 100,
+                "maximumPayout": 1000,
+                "payoutFrequency": "DAILY",
+                "maxPayouts": 5,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "scaling": [
+                  {
+                    "profitPercent": 1.5,
+                    "maxMiniContracts": 3,
+                    "maxMicroContracts": 30
+                  },
+                  {
+                    "profitPercent": 3,
+                    "maxMiniContracts": 5,
+                    "maxMicroContracts": 50
+                  }
+                ]
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6500,
+                "maximumDrawdown": 3000,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 40,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "minimumProfitableDays": 0,
+                "minimumPayout": 100,
+                "maximumPayout": 1600,
+                "payoutFrequency": "DAILY",
+                "maxPayouts": 5,
+                "maxMiniContracts": 3,
+                "maxMicroContracts": 30,
+                "scaling": [
+                  {
+                    "profitPercent": 1.5,
+                    "maxMiniContracts": 5,
+                    "maxMicroContracts": 50
+                  },
+                  {
+                    "profitPercent": 3,
+                    "maxMiniContracts": 8,
+                    "maxMicroContracts": 80
+                  }
+                ]
+              }
+            },
+            "200000": {
+              "evaluation": {
+                "profitTarget": 13500,
+                "maximumDrawdown": 6000,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 40,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100
+              },
+              "funded": {
+                "maximumDrawdown": 6000,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "minimumProfitableDays": 0,
+                "minimumPayout": 100,
+                "maximumPayout": 2100,
+                "payoutFrequency": "DAILY",
+                "maxPayouts": 5,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "scaling": [
+                  {
+                    "profitPercent": 1.5,
+                    "maxMiniContracts": 7,
+                    "maxMicroContracts": 70
+                  },
+                  {
+                    "profitPercent": 3,
+                    "maxMiniContracts": 10,
+                    "maxMicroContracts": 100
+                  }
+                ]
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "completeness": "CORE_AND_PAYOUT",
+            "sourceSet": "official E8 Markets Futures Help Center"
+          }
+        },
+        "ZERO_MAX": {
+          "displayName": "E8 Zero Max",
+          "aliases": [
+            "zero max"
+          ],
+          "sizes": {
+            "50000": {
+              "evaluation": {
+                "profitTarget": 3000,
+                "maximumDrawdown": 1500,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 40,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40
+              },
+              "funded": {
+                "maximumDrawdown": 1500,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "minimumProfitableDays": 0,
+                "minimumPayout": 100,
+                "maximumPayout": 3000,
+                "payoutFrequency": "DAILY",
+                "maxPayouts": 5,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "scaling": [
+                  {
+                    "profitPercent": 1.5,
+                    "maxMiniContracts": 3,
+                    "maxMicroContracts": 30
+                  },
+                  {
+                    "profitPercent": 3,
+                    "maxMiniContracts": 5,
+                    "maxMicroContracts": 50
+                  }
+                ]
+              }
+            },
+            "100000": {
+              "evaluation": {
+                "profitTarget": 6500,
+                "maximumDrawdown": 3000,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 40,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 8,
+                "maxMicroContracts": 80
+              },
+              "funded": {
+                "maximumDrawdown": 3000,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "minimumProfitableDays": 0,
+                "minimumPayout": 100,
+                "maximumPayout": 5000,
+                "payoutFrequency": "DAILY",
+                "maxPayouts": 5,
+                "maxMiniContracts": 3,
+                "maxMicroContracts": 30,
+                "scaling": [
+                  {
+                    "profitPercent": 1.5,
+                    "maxMiniContracts": 5,
+                    "maxMicroContracts": 50
+                  },
+                  {
+                    "profitPercent": 3,
+                    "maxMiniContracts": 8,
+                    "maxMicroContracts": 80
+                  }
+                ]
+              }
+            },
+            "200000": {
+              "evaluation": {
+                "profitTarget": 13500,
+                "maximumDrawdown": 6000,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": 40,
+                "minimumTradingDays": 0,
+                "maxMiniContracts": 10,
+                "maxMicroContracts": 100
+              },
+              "funded": {
+                "maximumDrawdown": 6000,
+                "drawdownPercent": 3,
+                "drawdownType": "EOD_DYNAMIC",
+                "drawdownLocksAtInitialBalance": true,
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "minimumTradingDays": 0,
+                "minimumProfitableDays": 0,
+                "minimumPayout": 100,
+                "maximumPayout": 7000,
+                "payoutFrequency": "DAILY",
+                "maxPayouts": 5,
+                "maxMiniContracts": 4,
+                "maxMicroContracts": 40,
+                "scaling": [
+                  {
+                    "profitPercent": 1.5,
+                    "maxMiniContracts": 7,
+                    "maxMicroContracts": 70
+                  },
+                  {
+                    "profitPercent": 3,
+                    "maxMiniContracts": 10,
+                    "maxMicroContracts": 100
+                  }
+                ]
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-08-25",
+            "resolverEnabled": true,
+            "completeness": "CORE_AND_PAYOUT",
+            "sourceSet": "official E8 Markets Futures Help Center"
           }
         }
       }
     }
-  }
-},
-
-    "APEX": {
-      "displayName": "Apex Trader Funding",
-      "aliases": ["apex", "pa-"],
-      "plans": {}
-    },
-
-    "TOPSTEP": {
-      "displayName": "Topstep",
-      "aliases": ["topstep", "express funded", "trading combine"],
-      "plans": {}
-    },
-
-    "TPT": {
-      "displayName": "Take Profit Trader",
-      "aliases": ["take profit trader", "tpt"],
-      "plans": {}
+  },
+  "_sources": {
+    "verifiedAt": "2026-08-25",
+    "policy": "Official firm help centers / official firm websites only where possible.",
+    "firms": {
+      "LUCID": [
+        "support.lucidtrading.com"
+      ],
+      "TRADEIFY": [
+        "help.tradeify.co"
+      ],
+      "TOPSTEP": [
+        "help.topstep.com"
+      ],
+      "TPT": [
+        "takeprofittrader.com",
+        "try.takeprofittrader.com"
+      ],
+      "MFFU": [
+        "help.myfundedfutures.com"
+      ],
+      "FUNDEDNEXT": [
+        "helpfutures.fundednext.com"
+      ],
+      "APEX": [
+        "apextraderfunding.com/help-center"
+      ],
+      "BULENOX": [
+        "bulenox.com/help-center"
+      ],
+      "EARN2TRADE": [
+        "help.earn2trade.com"
+      ],
+      "E8": [
+        "helpfutures.e8markets.com"
+      ]
     }
+  },
+  "_audit": {
+    "safetyPolicy": "Only auto-resolve variants with verified core numeric risk rules.",
+    "currentResolverCompatibility": true,
+    "disabledPlansRemainInvisibleInDynamicFrontend": true,
+    "verifiedOn": "2026-08-25",
+    "pendingExactNumericTables": [
+      "Take Profit Trader all-size Test/PRO/PRO+ table",
+      "Earn2Trade complete TCP/Gauntlet Mini numeric tables",
+      "Tradeify Lightning core drawdown/contract table"
+    ],
+    "productionReady": true,
+    "importantLegacyBranches": [
+      "TakeProfitTrader TEST_LEGACY_5_DAY for tests purchased before 2026-08-17",
+      "Tradeify LIGHTNING_150K_LEGACY_DLL for qualifying old 150K accounts"
+    ],
+    "notes": [
+      "Rules still change at prop firms; central versioning remains required.",
+      "Historical accounts should preserve the plan variant/rulesVersion assigned when classified."
+    ]
   }
 }
