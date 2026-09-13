@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "rulesVersion": "2026.08.25.5",
-  "updatedAt": "2026-08-25T22:45:00Z",
+  "rulesVersion": "2026.09.13.2",
+  "updatedAt": "2026-09-13T19:25:00Z",
   "catalogMode": "MASTER_PRODUCTION_SAFE",
   "notes": [
     "Backward-compatible with current JJ Trading Tools accountRulesResolver schema.",
@@ -2103,6 +2103,54 @@
           "_meta": {
             "verified": "2026-08-25",
             "sourceSet": "official MFFU Help Center"
+          }
+        },
+        "BUILDER": {
+          "displayName": "Builder",
+          "aliases": [
+            "builder",
+            "builder plan",
+            "plan del constructor"
+          ],
+          "sizes": {
+            "25000": {
+              "evaluation": {
+                "profitTarget": 1500,
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": null,
+                "minimumTradingDays": 1,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "microScalingRatio": 10,
+                "inactivityDays": 7,
+                "scalingRule": false
+              },
+              "funded": {
+                "maximumDrawdown": 1000,
+                "drawdownType": "EOD_TRAILING",
+                "dailyLossLimit": null,
+                "consistencyPercent": 50,
+                "qualifyingTradingDays": 2,
+                "qualifyingDayProfit": 0,
+                "minimumPayout": 250,
+                "maximumPayout": 1000,
+                "profitSplitPercent": 80,
+                "payoutBuffer": 1100,
+                "maxMiniContracts": 2,
+                "maxMicroContracts": 20,
+                "microScalingRatio": 10,
+                "scalingRule": false
+              }
+            }
+          },
+          "_meta": {
+            "verified": "2026-09-13",
+            "resolverEnabled": true,
+            "completeness": "CORE_AND_PAYOUT",
+            "sourceSet": "MFFU Builder 25K current checkout/rules + official MFFU help center",
+            "note": "Builder 25K added as a distinct plan. Do not merge with Rapid, Pro, or legacy Flex."
           }
         }
       }
