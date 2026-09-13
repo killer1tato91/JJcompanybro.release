@@ -6,6 +6,12 @@ on:
   schedule:
     - cron: "17 12 * * *"
 
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/check-prop-rules.yml"
+
 permissions:
   contents: write
 
@@ -21,6 +27,73 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      - name: Aplicar MFFU Builder 25K al catálogo central
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('rules/prop-firm-rules.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+
+          mffu = data.setdefault('firms', {}).setdefault('MFFU', {})
+          plans = mffu.setdefault('plans', {})
+
+          plans['BUILDER'] = {
+            'displayName': 'Builder',
+            'aliases': ['builder', 'builder plan', 'plan del constructor'],
+            'sizes': {
+              '25000': {
+                'evaluation': {
+                  'profitTarget': 1500,
+                  'maximumDrawdown': 1000,
+                  'drawdownType': 'EOD_TRAILING',
+                  'dailyLossLimit': None,
+                  'consistencyPercent': None,
+                  'minimumTradingDays': 1,
+                  'maxMiniContracts': 2,
+                  'maxMicroContracts': 20,
+                  'microScalingRatio': 10,
+                  'inactivityDays': 7,
+                  'scalingRule': False
+                },
+                'funded': {
+                  'maximumDrawdown': 1000,
+                  'drawdownType': 'EOD_TRAILING',
+                  'dailyLossLimit': None,
+                  'consistencyPercent': 50,
+                  'qualifyingTradingDays': 2,
+                  'qualifyingDayProfit': 0,
+                  'minimumPayout': 250,
+                  'maximumPayout': 1000,
+                  'profitSplitPercent': 80,
+                  'payoutBuffer': 1100,
+                  'maxMiniContracts': 2,
+                  'maxMicroContracts': 20,
+                  'microScalingRatio': 10,
+                  'scalingRule': False
+                }
+              }
+            },
+            '_meta': {
+              'verified': '2026-09-13',
+              'resolverEnabled': True,
+              'completeness': 'CORE_AND_PAYOUT',
+              'sourceSet': 'MFFU Builder 25K current checkout/rules + official MFFU help center',
+              'note': 'Builder 25K added as a distinct plan. Do not merge with Rapid, Pro, or legacy Flex.'
+            }
+          }
+
+          data['rulesVersion'] = '2026.09.13.2'
+          data['updatedAt'] = '2026-09-13T19:25:00Z'
+
+          path.write_text(
+              json.dumps(data, indent=2, ensure_ascii=False) + '\n',
+              encoding='utf-8'
+          )
+          PY
 
       - name: Instalar dependencias
         run: npm ci
@@ -42,11 +115,11 @@ jobs:
           git config user.name "J&J Rules Bot"
           git config user.email "jj-rules-bot@users.noreply.github.com"
 
-          git add rules/pending-changes.json
+          git add rules/prop-firm-rules.json rules/pending-changes.json
 
           if git diff --cached --quiet; then
             echo "No hay cambios para guardar"
           else
-            git commit -m "Actualizar revisión automática de reglas"
+            git commit -m "Actualizar catálogo Prop Firms: MFFU Builder 25K"
             git push
           fi
