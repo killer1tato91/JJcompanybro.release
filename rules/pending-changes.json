@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-25T17:08:20.356Z",
+  "generatedAt": "2026-09-26T16:21:05.788Z",
   "rulesVersionChecked": "2026.09.13.2",
   "firmsChecked": [
     "TRADEIFY"
@@ -17,7 +17,7 @@
       "sourceId": "tradeify-select-evaluation",
       "sourceName": "Select Evaluation Accounts",
       "sourceUrl": "https://help.tradeify.co/en/articles/12853921-select-evaluation-accounts",
-      "checkedAt": "2026-09-25T17:08:12.948Z",
+      "checkedAt": "2026-09-26T16:20:58.682Z",
       "success": true,
       "checks": [
         {
@@ -74,7 +74,7 @@
       "sourceId": "tradeify-growth-evaluation",
       "sourceName": "Growth Evaluation Accounts",
       "sourceUrl": "https://help.tradeify.co/en/articles/10495915-growth-evaluation-accounts",
-      "checkedAt": "2026-09-25T17:08:16.647Z",
+      "checkedAt": "2026-09-26T16:21:02.234Z",
       "success": true,
       "checks": [
         {
@@ -195,7 +195,7 @@
       "sourceId": "tradeify-consistency",
       "sourceName": "Consistency Rule",
       "sourceUrl": "https://help.tradeify.co/en/articles/10468320-rules-consistency-rule",
-      "checkedAt": "2026-09-25T17:08:20.356Z",
+      "checkedAt": "2026-09-26T16:21:05.788Z",
       "success": true,
       "checks": [
         {
