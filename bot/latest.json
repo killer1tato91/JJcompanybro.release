@@ -1,9 +1,9 @@
 {
-    "version":  "1.6.60",
+    "version":  "1.6.61",
     "packagePath":  "bot/JJBotPack.zip",
-    "sha256":  "f612185c9f0200a0c7becc8cdc038f47a747ee52c7493ff78ad16a31e1a604d6",
-    "requiredAppVersion":  "1.1.29",
-    "learningBaseVersion":  "1.6.60.20260927.031035",
+    "sha256":  "ab0e64b2337759a18537a46a65674550392695c6aa2b79544a2a70c96ab5e0fb",
+    "requiredAppVersion":  "1.1.28",
+    "learningBaseVersion":  "1.6.61.20260927.031219",
     "notes":  [
                   "Breakout retest pending-entry engine",
                   "M5 structure retest using actual BOS/CHOCH break level",
@@ -13,5 +13,5 @@
                   "Premarket directional bias is available to AUTO at the opening",
                   "Preserves V1.6.10 loss rearm, global exhaustion and adaptive trailing"
               ],
-    "publishedAt":  "2026-09-27T03:10:42.4433552Z"
+    "publishedAt":  "2026-09-27T03:12:26.2282453Z"
 }
