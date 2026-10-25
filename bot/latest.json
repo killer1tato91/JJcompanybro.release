@@ -1,17 +1,11 @@
 {
-    "version":  "1.6.91",
+    "version":  "1.6.92",
     "packagePath":  "bot/JJBotPack.zip",
-    "sha256":  "44c0e3c9ad39a1afd78df1ee3461c290891eaac0b5c4c3a04fb7e2047ad0fd43",
+    "sha256":  "b367884f200bf170db9413fb2e842ee9dcb447fadafce983bc901666367a8bd6",
     "requiredAppVersion":  "1.1.28",
     "learningBaseVersion":  "1.6.81.20261013.234501",
     "notes":  [
-                  "Breakout retest pending-entry engine",
-                  "M5 structure retest using actual BOS/CHOCH break level",
-                  "Micro-pullback continuation confirmation",
-                  "Aggressive Expansion keeps direct-entry privilege",
-                  "Premarket high/low/mid/range statistics built continuously",
-                  "Premarket directional bias is available to AUTO at the opening",
-                  "Preserves V1.6.10 loss rearm, global exhaustion and adaptive trailing"
+                  "QuÃ© cambiÃ³"
               ],
-    "publishedAt":  "2026-10-24T20:14:05.0147791Z"
+    "publishedAt":  "2026-10-25T16:25:53.8345728Z"
 }
