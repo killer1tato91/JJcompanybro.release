@@ -1,11 +1,11 @@
 {
-    "version":  "1.6.95",
+    "version":  "1.6.96",
     "packagePath":  "bot/JJBotPack.zip",
-    "sha256":  "cfab7f4a38732a79de4ad7b79f23fec55c45adce793cf66c07359c0513bfcc14",
+    "sha256":  "1a008d2e27793f3b5d3d6203e79b22c32ee71336c1c0143f8577d85eeb757094",
     "requiredAppVersion":  "1.1.28",
     "learningBaseVersion":  "1.6.81.20261013.234501",
     "notes":  [
                   "QuÃ© cambiÃ³"
               ],
-    "publishedAt":  "2026-10-27T00:48:26.7420224Z"
+    "publishedAt":  "2026-10-27T00:50:52.0261343Z"
 }
