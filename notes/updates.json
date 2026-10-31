@@ -1,22 +1,6 @@
 {
-    "updatedAt":  "2026-10-31T23:19:25.3206284Z",
+    "updatedAt":  "2026-10-31T23:27:08.4629503Z",
     "items":  [
-                  {
-                      "id":  "apk-1.0.54",
-                      "component":  "apk",
-                      "version":  "1.0.54",
-                      "title":  "Actualizacion de la APK",
-                      "notes":  [
-                                    "Conexiones: toca el estado para conectar o desconectar, ⟳ Ahora reinicia la conexión y mantén presionada para eliminar.",
-                                    "El botón \"+ Agregar conexión\" ahora está en Ajustes \u003e Conexiones, junto a todo lo de las conexiones.",
-                                    "Risk Cap automático en el bot: se calcula solo según los contratos.",
-                                    "Copy Trading más seguro: cada usuario solo ve y cambia sus propios grupos.",
-                                    "Las novedades de cada actualización aparecen al instalar y quedan guardadas en la campana.",
-                                    "Corregido: el aviso de NinjaTrader al cerrarlo ya no llega repetido a la campana ni como notificación.",
-                                    "Las cuentas slave ahora aparecen en Daily Target: con su propia meta o cuando su master llega a la suya."
-                                ],
-                      "publishedAt":  "2026-10-31T23:19:25.3206284Z"
-                  },
                   {
                       "id":  "bot-1.6.105",
                       "component":  "bot",
@@ -33,7 +17,35 @@
                                     "Al abrir NinjaTrader, las actualizaciones del bot se compilan solas (si no hay posiciones abiertas).",
                                     "Copy Trading: cada cuenta slave puede tener su propia meta y pérdida del día; al llegar se cierran sus copias y no copia más hoy."
                                 ],
-                      "publishedAt":  "2026-10-31T23:19:23.4499813Z"
+                      "titleEn":  "Bot update",
+                      "notesEn":  [
+                                      "Open Bell: new rescue SHORT at 09:30:13 on days it signals LONG and price drops 5 points or more.",
+                                      "Open Bell: the flip now reverses with the full size.",
+                                      "Old strategies removed: only CORE20 and COMBINED remain, and it enters with all the configured contracts.",
+                                      "News guard active: blocks entries and closes positions 2 minutes before and after high-impact USD news.",
+                                      "Copy trading: closes copied positions left orphaned or against the master, and trims extra contracts.",
+                                      "Copy trading: Micro option per account (the master trades NQ and the account enters MNQ).",
+                                      "Journal: every trade saves its MFE and MAE (best and worst moment of the trade).",
+                                      "When NinjaTrader opens, bot updates compile by themselves (if there are no open positions).",
+                                      "Copy Trading: each slave account can have its own daily target and loss; when reached, its copies close and it stops copying for the day."
+                                  ],
+                      "publishedAt":  "2026-10-31T23:27:08.4629503Z"
+                  },
+                  {
+                      "id":  "apk-1.0.54",
+                      "component":  "apk",
+                      "version":  "1.0.54",
+                      "title":  "Actualizacion de la APK",
+                      "notes":  [
+                                    "Conexiones: toca el estado para conectar o desconectar, ⟳ Ahora reinicia la conexión y mantén presionada para eliminar.",
+                                    "El botón \"+ Agregar conexión\" ahora está en Ajustes \u003e Conexiones, junto a todo lo de las conexiones.",
+                                    "Risk Cap automático en el bot: se calcula solo según los contratos.",
+                                    "Copy Trading más seguro: cada usuario solo ve y cambia sus propios grupos.",
+                                    "Las novedades de cada actualización aparecen al instalar y quedan guardadas en la campana.",
+                                    "Corregido: el aviso de NinjaTrader al cerrarlo ya no llega repetido a la campana ni como notificación.",
+                                    "Las cuentas slave ahora aparecen en Daily Target: con su propia meta o cuando su master llega a la suya."
+                                ],
+                      "publishedAt":  "2026-10-31T23:19:25.3206284Z"
                   }
               ]
 }
