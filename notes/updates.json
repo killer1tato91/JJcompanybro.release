@@ -1,6 +1,44 @@
 {
-    "updatedAt":  "2026-10-31T23:30:39.8595939Z",
+    "updatedAt":  "2026-10-31T23:39:39.9412123Z",
     "items":  [
+                  {
+                      "id":  "desktop-1.1.109",
+                      "component":  "desktop",
+                      "version":  "1.1.109",
+                      "title":  "Actualizacion de la app",
+                      "notes":  [
+                                    "Copy Trading rediseñado en 3 columnas: master y reglas, cuentas, y grupos con ajustes por cuenta.",
+                                    "La cuenta master ahora se guarda y se mantiene en pantalla correctamente.",
+                                    "Una cuenta solo puede estar en un grupo, para que nunca se copie dos veces.",
+                                    "Cada cuenta del grupo puede tener su propio modo: tamaño fijo, multiplicador, inversa o Micro.",
+                                    "Efecto de fuego en el pie de Copy Trading mientras el copiado está activo, con el color de tu tema.",
+                                    "Risk Cap automático: se calcula solo según los contratos (4 MNQ = $280).",
+                                    "Las novedades de cada actualización aparecen al instalar y quedan guardadas en la campana.",
+                                    "Corregido: el aviso de NinjaTrader al cerrarlo (\"Save Workspace\") ya no se repite en la campana cada vez que abres la app.",
+                                    "Cuando NinjaTrader aplica solo una actualización del bot, el aviso sale dentro de la app, en tu idioma, y queda en la campana.",
+                                    "Eval aprobada: la notificación trae el botón para abrir la firma, aceptar los términos y firmar el contrato de la funded.",
+                                    "Cuentas nuevas sin plan: JJ usa el plan que ya tienes en esa firma y tamaño y lo marca \"Reglas sugeridas · confirma\".",
+                                    "Copy Trading: meta y pérdida del día por cuenta slave. Con Mission Mode activo, cada slave respeta las reglas de su firma (consistencia, drawdown, DLL) y la app muestra su estado.",
+                                    "Las novedades de las actualizaciones salen en el idioma de la app."
+                                ],
+                      "titleEn":  "Desktop update",
+                      "notesEn":  [
+                                      "Copy Trading redesigned in 3 columns: master and rules, accounts, and groups with per-account settings.",
+                                      "The master account is now saved and stays on screen correctly.",
+                                      "An account can only be in one group, so it is never copied twice.",
+                                      "Each account in the group can have its own mode: fixed size, multiplier, reverse or Micro.",
+                                      "Fire effect at the bottom of Copy Trading while copying is active, in your theme color.",
+                                      "Automatic Risk Cap: calculated from the contracts (4 MNQ = $280).",
+                                      "What\u0027s new in each update appears after installing and stays saved in the bell.",
+                                      "Fixed: the NinjaTrader closing message (\"Save Workspace\") no longer repeats in the bell every time you open the app.",
+                                      "When NinjaTrader applies a bot update by itself, the message shows inside the app, in your language, and stays in the bell.",
+                                      "Eval passed: the notification has a button to open the firm, accept the terms and sign the funded contract.",
+                                      "New accounts without a plan: JJ uses the plan you already have at that firm and size and marks it \"Suggested rules · confirm\".",
+                                      "Copy Trading: daily target and loss per slave account. With Mission Mode on, each slave follows its firm rules (consistency, drawdown, DLL) and the app shows its status.",
+                                      "Update notes now show in the app language."
+                                  ],
+                      "publishedAt":  "2026-10-31T23:39:39.9412123Z"
+                  },
                   {
                       "id":  "apk-1.0.55",
                       "component":  "apk",
