@@ -1,0 +1,23 @@
+{
+    "updatedAt":  "2026-10-31T23:19:23.4499813Z",
+    "items":  [
+                  {
+                      "id":  "bot-1.6.105",
+                      "component":  "bot",
+                      "version":  "1.6.105",
+                      "title":  "Actualizacion del bot",
+                      "notes":  [
+                                    "Open Bell: nuevo SHORT de rescate a las 09:30:13 los dias que marca LONG y el precio cae 5 puntos o mas.",
+                                    "Open Bell: el flip ahora gira con el tamaño completo.",
+                                    "Se quitaron las estrategias viejas: solo quedan CORE20 y COMBINED, y entra con todos los contratos configurados.",
+                                    "Guardián de noticias activo: bloquea entradas y cierra posiciones 2 minutos antes y después de noticias USD de alto impacto.",
+                                    "Copy trading: cierra solo las posiciones copiadas que quedan huérfanas o en contra de la master, y recorta contratos de más.",
+                                    "Copy trading: opción Micro por cuenta (la master opera NQ y la cuenta entra en MNQ).",
+                                    "Journal: cada trade guarda su MFE y MAE (mejor y peor momento del trade).",
+                                    "Al abrir NinjaTrader, las actualizaciones del bot se compilan solas (si no hay posiciones abiertas).",
+                                    "Copy Trading: cada cuenta slave puede tener su propia meta y pérdida del día; al llegar se cierran sus copias y no copia más hoy."
+                                ],
+                      "publishedAt":  "2026-10-31T23:19:23.4499813Z"
+                  }
+              ]
+}
