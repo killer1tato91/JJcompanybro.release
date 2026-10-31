@@ -1,0 +1,990 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-31T23:59:00Z",
+  "notes": {
+    "es": "Reglas de terceros y páginas oficiales; cambian seguido. Verifica en la firma antes de comprar.",
+    "en": "Third-party summaries and official pages; rules change often. Verify with the firm before buying."
+  },
+  "firms": [
+    {
+      "id": "LUCID",
+      "name": "Lucid Trading",
+      "aliases": [
+        "lucid",
+        "luciddirect",
+        "lucidflex",
+        "lucid flex",
+        "lucidpro"
+      ],
+      "website": "https://lucidtrading.com",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "Quantower",
+          "Sierra Chart",
+          "R|Trader Pro",
+          "MotiveWave",
+          "ATAS",
+          "Bookmap"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate",
+        "Rithmic"
+      ],
+      "automation": "allowed",
+      "copyOwnAccounts": "yes",
+      "note": {
+        "es": "Permite bots y copiadores en eval y fondeada. Prohibido HFT, microscalping y hedge entre cuentas.",
+        "en": "Bots and trade copiers allowed on eval and funded. HFT, microscalping and cross-account hedging are prohibited."
+      },
+      "sources": [
+        "https://crosstrade.io/prop-funding",
+        "https://pitbridge.com/compare/prop-firms-for-automated-trading/",
+        "https://crosstrade.io/learn/prop-firm-ai-trading/lucid-trading"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "TRADEIFY",
+      "name": "Tradeify",
+      "aliases": [
+        "tradeify",
+        "tradeify select",
+        "tradeify lightning",
+        "tradeify growth"
+      ],
+      "website": "https://tradeify.co",
+      "platforms": {
+        "ninjatrader": "partial",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "Tradesea",
+          "Quantower",
+          "Sierra Chart",
+          "R|Trader",
+          "WealthCharts"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate",
+        "Rithmic"
+      ],
+      "automation": "own_only",
+      "copyOwnAccounts": "yes",
+      "note": {
+        "es": "NinjaTrader solo en cuentas Tradovate. Bots solo si la estrategia es 100% tuya (pueden pedir video): un bot comercial como JJ Bot no está permitido. Copiar entre tus cuentas sí.",
+        "en": "NinjaTrader only on Tradovate accounts. Bots only if you solely own the strategy (they may ask for a video): a commercial bot like JJ Bot is not allowed. Copying between your own accounts is allowed."
+      },
+      "sources": [
+        "https://crosstrade.io/learn/prop-firm-ai-trading/tradeify",
+        "https://finseeds.com/firms/futures-prop-firms-that-allow-automation/",
+        "https://propfirmpinescripts.com/guides/prop-firms-that-allow-automated-trading.html"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "MFFU",
+      "name": "My Funded Futures",
+      "aliases": [
+        "mffu",
+        "myfundedfutures",
+        "my funded futures",
+        "mff"
+      ],
+      "website": "https://myfundedfutures.com",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "Quantower",
+          "Volumetrica",
+          "DeepChart",
+          "ATAS"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate",
+        "Rithmic"
+      ],
+      "automation": "conditions",
+      "copyOwnAccounts": "yes",
+      "note": {
+        "es": "Automatización permitida si no busca aprovechar los fills simulados; sin HFT. Copiar entre tus cuentas sí; copiar a otros traders no.",
+        "en": "Automation allowed if it does not exploit simulated fills; no HFT. Copying between your own accounts is allowed; copying other traders is not."
+      },
+      "sources": [
+        "https://crosstrade.io/learn/prop-firm-ai-trading/myfundedfutures",
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms",
+        "https://pitbridge.com/compare/prop-firms-for-automated-trading/"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "TOPSTEP",
+      "name": "Topstep",
+      "aliases": [
+        "topstep",
+        "topstepx",
+        "top step",
+        "projectx"
+      ],
+      "website": "https://www.topstep.com",
+      "platforms": {
+        "ninjatrader": "no",
+        "tradingview": "unknown",
+        "others": [
+          "TopstepX"
+        ]
+      },
+      "dataFeeds": [
+        "ProjectX"
+      ],
+      "automation": "approval",
+      "copyOwnAccounts": "limited",
+      "note": {
+        "es": "Las cuentas nuevas solo operan en TopstepX: NinjaTrader no está disponible, así que JJ no puede conectarse.",
+        "en": "New accounts trade only on TopstepX: NinjaTrader is not available, so JJ cannot connect."
+      },
+      "sources": [
+        "https://crosstrade.io/learn/prop-firm-ai-trading/topstep",
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms",
+        "https://pitbridge.com/compare/prop-firms-for-automated-trading/"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "TPT",
+      "name": "Take Profit Trader",
+      "aliases": [
+        "tpt",
+        "take profit trader",
+        "takeprofittrader",
+        "take profit"
+      ],
+      "website": "https://takeprofittrader.com",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "Quantower",
+          "MotiveWave",
+          "Sierra Chart"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate",
+        "Rithmic"
+      ],
+      "automation": "no",
+      "copyOwnAccounts": "approved_tools",
+      "note": {
+        "es": "Exige trading manual: bots prohibidos. Copiar entre tus cuentas solo con copiadores aprobados (Tradesyncer, TradeCopia, copiadores nativos de NinjaTrader/Tradovate); el copiador de JJ no está en su lista.",
+        "en": "Manual trading required: bots prohibited. Copying between your own accounts only with approved copiers (Tradesyncer, TradeCopia, native NinjaTrader/Tradovate copiers); the JJ copier is not on their list."
+      },
+      "sources": [
+        "https://proptradingvibes.com/blog/takeprofittrader-copy-trading-rules",
+        "https://crosstrade.io/prop-funding"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "APEX",
+      "name": "Apex Trader Funding",
+      "aliases": [
+        "apex",
+        "apex trader funding",
+        "apextraderfunding",
+        "atf"
+      ],
+      "website": "https://apextraderfunding.com",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "R|Trader",
+          "WealthCharts"
+        ]
+      },
+      "dataFeeds": [
+        "Rithmic",
+        "Tradovate"
+      ],
+      "automation": "no",
+      "copyOwnAccounts": "manual_leader",
+      "note": {
+        "es": "Prohíbe automatización y algoritmos: cada orden debe ser manual. Solo permite copiar si la cuenta líder la operas tú a mano.",
+        "en": "Automation and algorithms prohibited: every order must be manual. Copying only if you trade the leader account by hand."
+      },
+      "sources": [
+        "https://crosstrade.io/learn/prop-firm-ai-trading/apex-trader-funding",
+        "https://pitbridge.com/compare/prop-firms-for-automated-trading/",
+        "https://propfirmpinescripts.com/guides/prop-firms-that-allow-automated-trading.html"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "BULENOX",
+      "name": "Bulenox",
+      "aliases": [
+        "bulenox"
+      ],
+      "website": "https://bulenox.com",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "no",
+        "others": [
+          "R|Trader Pro"
+        ]
+      },
+      "dataFeeds": [
+        "Rithmic"
+      ],
+      "automation": "own_only",
+      "copyOwnAccounts": "no",
+      "note": {
+        "es": "Bots y copiadores solo si los hiciste tú y son de uso personal: herramientas comerciales como JJ no están permitidas. API de Rithmic cuesta $100/mes extra.",
+        "en": "Bots and copiers only if you built them for personal use: commercial tools like JJ are not allowed. Rithmic third-party API costs an extra $100/month."
+      },
+      "sources": [
+        "https://crosstrade.io/learn/prop-firm-ai-trading/bulenox",
+        "https://crosstrade.io/prop-funding"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "TRADEDAY",
+      "name": "TradeDay",
+      "aliases": [
+        "tradeday",
+        "trade day"
+      ],
+      "website": "https://www.tradeday.com",
+      "platforms": {
+        "ninjatrader": "partial",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "Quantower",
+          "Jigsaw"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate",
+        "Rithmic"
+      ],
+      "automation": "own_only",
+      "copyOwnAccounts": "limited",
+      "note": {
+        "es": "NinjaTrader solo en cuentas Tradovate/CQG. Prohíbe bots comprados a terceros. Copiar entre tus cuentas sí, con límites entre Live y Sim.",
+        "en": "NinjaTrader only on Tradovate/CQG accounts. Bots bought from third parties are forbidden. Copying between your own accounts allowed, with limits between Live and Sim."
+      },
+      "sources": [
+        "https://crosstrade.io/learn/prop-firm-ai-trading/tradeday",
+        "https://crosstrade.io/prop-funding"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "EARN2TRADE",
+      "name": "Earn2Trade",
+      "aliases": [
+        "earn2trade",
+        "e2t",
+        "earn 2 trade",
+        "gauntlet"
+      ],
+      "website": "https://www.earn2trade.com",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "R|Trader Pro",
+          "Finamark",
+          "Sierra Chart"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate",
+        "Rithmic"
+      ],
+      "automation": "no",
+      "copyOwnAccounts": "no",
+      "note": {
+        "es": "No permite copiadores en ningún programa y no autoriza bots.",
+        "en": "Trade copiers are not allowed on any program and bots are not authorized."
+      },
+      "sources": [
+        "https://crosstrade.io/prop-funding",
+        "https://pitbridge.com/compare/prop-firms-for-automated-trading/"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "FUNDEDNEXT",
+      "name": "FundedNext Futures",
+      "aliases": [
+        "fundednext",
+        "funded next",
+        "fundednext futures"
+      ],
+      "website": "https://fundednext.com",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Soporta NinjaTrader. Falta confirmar su política de bots y copiado.",
+        "en": "Supports NinjaTrader. Bot and copy policy still to be confirmed."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "ALPHAFUTURES",
+      "name": "Alpha Futures",
+      "aliases": [
+        "alpha futures",
+        "alphafutures",
+        "alpha"
+      ],
+      "website": "https://alpha-futures.com",
+      "platforms": {
+        "ninjatrader": "no",
+        "tradingview": "yes",
+        "others": [
+          "AlphaTrader",
+          "Quantower",
+          "WealthCharts",
+          "DeepChart"
+        ]
+      },
+      "dataFeeds": [
+        "dxFeed"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "No usa NinjaTrader (AlphaTrader, Quantower, TradingView vía Plus500): JJ no puede conectarse.",
+        "en": "Does not use NinjaTrader (AlphaTrader, Quantower, TradingView via Plus500): JJ cannot connect."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "ETF",
+      "name": "Elite Trader Funding",
+      "aliases": [
+        "elite trader funding",
+        "etf",
+        "elitetraderfunding"
+      ],
+      "website": "https://elitetraderfunding.com",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "Tickblaze"
+        ]
+      },
+      "dataFeeds": [
+        "Rithmic",
+        "Tradovate"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Soporta NinjaTrader. Falta confirmar su política de bots y copiado.",
+        "en": "Supports NinjaTrader. Bot and copy policy still to be confirmed."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "BLUSKY",
+      "name": "BluSky Trading",
+      "aliases": [
+        "blusky",
+        "blu sky",
+        "blue sky trading"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "Tradesea",
+          "DeepCharts",
+          "Tickblaze"
+        ]
+      },
+      "dataFeeds": [
+        "Rithmic",
+        "Tradovate"
+      ],
+      "automation": "conditions",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Automatización generalmente permitida si no cae en estrategias prohibidas. Copiado por confirmar.",
+        "en": "Automation generally allowed unless it falls into prohibited strategies. Copying to be confirmed."
+      },
+      "sources": [
+        "https://finseeds.com/firms/futures-prop-firms-that-allow-automation/",
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms",
+        "https://crosstrade.io/prop-funding"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "PHIDIAS",
+      "name": "Phidias Propfirm",
+      "aliases": [
+        "phidias"
+      ],
+      "website": "https://phidiaspropfirm.com",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "DeepCharts"
+        ]
+      },
+      "dataFeeds": [
+        "Rithmic",
+        "Tradovate"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Soporta NinjaTrader. Falta confirmar su política de bots y copiado.",
+        "en": "Supports NinjaTrader. Bot and copy policy still to be confirmed."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "PURDIA",
+      "name": "Purdia Capital",
+      "aliases": [
+        "purdia"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Soporta NinjaTrader. Falta confirmar su política de bots y copiado.",
+        "en": "Supports NinjaTrader. Bot and copy policy still to be confirmed."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "LEGENDS",
+      "name": "Legends Trading",
+      "aliases": [
+        "legends",
+        "legends trading"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "no",
+        "others": [
+          "Tradovate",
+          "Sierra Chart",
+          "Quantower"
+        ]
+      },
+      "dataFeeds": [
+        "Rithmic",
+        "Tradovate"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Soporta NinjaTrader. Falta confirmar su política de bots y copiado.",
+        "en": "Supports NinjaTrader. Bot and copy policy still to be confirmed."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "TOPONE",
+      "name": "Top One Futures",
+      "aliases": [
+        "top one futures",
+        "toponefutures",
+        "top one"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Soporta NinjaTrader. Falta confirmar su política de bots y copiado.",
+        "en": "Supports NinjaTrader. Bot and copy policy still to be confirmed."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "TRADINGPIT",
+      "name": "The Trading Pit Futures",
+      "aliases": [
+        "trading pit",
+        "the trading pit"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "no",
+        "others": [
+          "Tradovate",
+          "Quantower",
+          "ATAS",
+          "DeepCharts",
+          "R|Trader"
+        ]
+      },
+      "dataFeeds": [
+        "Rithmic",
+        "Tradovate"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Soporta NinjaTrader. Falta confirmar su política de bots y copiado.",
+        "en": "Supports NinjaTrader. Bot and copy policy still to be confirmed."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "BLUEGUARDIAN",
+      "name": "Blue Guardian Futures",
+      "aliases": [
+        "blue guardian",
+        "blueguardian"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "yes",
+        "others": [
+          "Tradovate",
+          "DeepCharts"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Soporta NinjaTrader. Falta confirmar su política de bots y copiado.",
+        "en": "Supports NinjaTrader. Bot and copy policy still to be confirmed."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "AQUA",
+      "name": "AquaFutures",
+      "aliases": [
+        "aquafutures",
+        "aqua futures",
+        "aqua"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "unknown",
+        "others": [
+          "Tradovate",
+          "DeepCharts"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Soporta NinjaTrader (con Tradovate). Falta confirmar su política de bots y copiado.",
+        "en": "Supports NinjaTrader (with Tradovate). Bot and copy policy still to be confirmed."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "DAYTRADERS",
+      "name": "Day Traders",
+      "aliases": [
+        "day traders",
+        "daytraders",
+        "daytraders.com"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "no",
+        "tradingview": "partial",
+        "others": [
+          "ArcTrader"
+        ]
+      },
+      "dataFeeds": [
+        "Rithmic"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Solo opera en ArcTrader (navegador): JJ no puede conectarse.",
+        "en": "Trades only on ArcTrader (browser): JJ cannot connect."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "TRADERSLAUNCH",
+      "name": "Traders Launch",
+      "aliases": [
+        "traders launch",
+        "traderslaunch"
+      ],
+      "website": "https://traderslaunch.com",
+      "platforms": {
+        "ninjatrader": "no",
+        "tradingview": "yes",
+        "others": [
+          "Volumetrica",
+          "Quantower"
+        ]
+      },
+      "dataFeeds": [],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Solo TradingView, Volumetrica y Quantower: sin NinjaTrader, JJ no puede conectarse.",
+        "en": "Only TradingView, Volumetrica and Quantower: no NinjaTrader, so JJ cannot connect."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "NEXGEN",
+      "name": "NexGen ProTrader Funding",
+      "aliases": [
+        "nexgen",
+        "nexgen protrader"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "no",
+        "tradingview": "yes",
+        "others": [
+          "Sierra Chart",
+          "CQG",
+          "DeepCharts",
+          "MotiveWave",
+          "Bookmap",
+          "Jigsaw"
+        ]
+      },
+      "dataFeeds": [
+        "CQG"
+      ],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "No lista NinjaTrader: JJ no puede conectarse (por confirmar).",
+        "en": "NinjaTrader is not listed: JJ cannot connect (to be confirmed)."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "FFN",
+      "name": "Funded Futures Network",
+      "aliases": [
+        "funded futures network",
+        "ffn"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "unknown",
+        "tradingview": "unknown",
+        "others": [
+          "Onyx",
+          "Nexus Trader"
+        ]
+      },
+      "dataFeeds": [
+        "Rithmic"
+      ],
+      "automation": "approval",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Fuentes contradictorias sobre NinjaTrader. Bots solo tras revisión del equipo.",
+        "en": "Sources disagree on NinjaTrader. Bots only after team review."
+      },
+      "sources": [
+        "https://www.quantvps.com/blog/list-of-futures-prop-trading-firms",
+        "https://finseeds.com/firms/futures-prop-firms-that-allow-automation/"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "FTMO",
+      "name": "FTMO Futures",
+      "aliases": [
+        "ftmo",
+        "ftmo futures"
+      ],
+      "website": "https://ftmo.com",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "unknown",
+        "others": [
+          "Tradovate"
+        ]
+      },
+      "dataFeeds": [
+        "Tradovate"
+      ],
+      "automation": "allowed",
+      "copyOwnAccounts": "yes",
+      "note": {
+        "es": "Futuros vía Tradovate con NinjaTrader. Bots y copiado entre tus cuentas permitidos; sin HFT ni hedge entre cuentas.",
+        "en": "Futures via Tradovate with NinjaTrader. Bots and copying between your own accounts allowed; no HFT or cross-account hedging."
+      },
+      "sources": [
+        "https://crosstrade.io/prop-funding",
+        "https://propfirmpinescripts.com/guides/prop-firms-that-allow-automated-trading.html"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "BOXCAR",
+      "name": "Boxcar Trading",
+      "aliases": [
+        "boxcar",
+        "boxcar trading"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "unknown",
+        "others": [
+          "R|Trader"
+        ]
+      },
+      "dataFeeds": [
+        "Rithmic"
+      ],
+      "automation": "allowed",
+      "copyOwnAccounts": "yes",
+      "note": {
+        "es": "Bots y copiado permitidos en tus propias cuentas. Prohibido posiciones contrarias entre cuentas.",
+        "en": "Bots and copying allowed on your own accounts. Opposite positions across accounts prohibited."
+      },
+      "sources": [
+        "https://crosstrade.io/prop-funding"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "ONEUP",
+      "name": "OneUp Trader",
+      "aliases": [
+        "oneup",
+        "oneup trader",
+        "one up trader"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "yes",
+        "tradingview": "unknown",
+        "others": []
+      },
+      "dataFeeds": [
+        "Rithmic"
+      ],
+      "automation": "own_only",
+      "copyOwnAccounts": "yes",
+      "note": {
+        "es": "Permite tus propios bots; no está claro si acepta bots comerciales. Copiado entre tus cuentas sí.",
+        "en": "Your own bots allowed; unclear for commercial bots. Copying between your own accounts allowed."
+      },
+      "sources": [
+        "https://finseeds.com/firms/futures-prop-firms-that-allow-automation/"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "FFF",
+      "name": "Funded Futures Family",
+      "aliases": [
+        "funded futures family",
+        "fff"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "unknown",
+        "tradingview": "unknown",
+        "others": []
+      },
+      "dataFeeds": [],
+      "automation": "no",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Prohíbe bots: solo trading manual.",
+        "en": "Bots prohibited: manual trading only."
+      },
+      "sources": [
+        "https://blog.traderspost.io/article/automate-funded-futures-family-with-traderspost"
+      ],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "E8",
+      "name": "E8 Markets Futures",
+      "aliases": [
+        "e8",
+        "e8 markets",
+        "e8 futures"
+      ],
+      "website": "https://e8markets.com",
+      "platforms": {
+        "ninjatrader": "unknown",
+        "tradingview": "unknown",
+        "others": []
+      },
+      "dataFeeds": [],
+      "automation": "unknown",
+      "copyOwnAccounts": "unknown",
+      "note": {
+        "es": "Por verificar: plataformas y política de bots.",
+        "en": "To be verified: platforms and bot policy."
+      },
+      "sources": [],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    },
+    {
+      "id": "VEST",
+      "name": "Vest Markets",
+      "aliases": [
+        "vest",
+        "vest markets",
+        "vest capital"
+      ],
+      "website": "",
+      "platforms": {
+        "ninjatrader": "no",
+        "tradingview": "no",
+        "others": []
+      },
+      "dataFeeds": [],
+      "automation": "unknown",
+      "copyOwnAccounts": "no",
+      "note": {
+        "es": "Plataforma cripto de futuros perpetuos, no CME ni NinjaTrader: JJ no puede conectarse.",
+        "en": "Crypto perpetual futures platform, not CME or NinjaTrader: JJ cannot connect."
+      },
+      "sources": [],
+      "confidence": "third_party",
+      "verifiedAt": "2026-10-31"
+    }
+  ]
+}
