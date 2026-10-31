@@ -1,6 +1,32 @@
 {
-    "updatedAt":  "2026-10-31T23:27:08.4629503Z",
+    "updatedAt":  "2026-10-31T23:27:10.1671125Z",
     "items":  [
+                  {
+                      "id":  "apk-1.0.54",
+                      "component":  "apk",
+                      "version":  "1.0.54",
+                      "title":  "Actualizacion de la APK",
+                      "notes":  [
+                                    "Conexiones: toca el estado para conectar o desconectar, ⟳ Ahora reinicia la conexión y mantén presionada para eliminar.",
+                                    "El botón \"+ Agregar conexión\" ahora está en Ajustes \u003e Conexiones, junto a todo lo de las conexiones.",
+                                    "Risk Cap automático en el bot: se calcula solo según los contratos.",
+                                    "Copy Trading más seguro: cada usuario solo ve y cambia sus propios grupos.",
+                                    "Las novedades de cada actualización aparecen al instalar y quedan guardadas en la campana.",
+                                    "Corregido: el aviso de NinjaTrader al cerrarlo ya no llega repetido a la campana ni como notificación.",
+                                    "Las cuentas slave ahora aparecen en Daily Target: con su propia meta o cuando su master llega a la suya."
+                                ],
+                      "titleEn":  "App update",
+                      "notesEn":  [
+                                      "Connections: tap the status to connect or disconnect, ⟳ Now restarts the connection, and long-press to delete.",
+                                      "The \"+ Add connection\" button is now in Settings \u003e Connections, with everything else about connections.",
+                                      "Automatic Risk Cap in the bot: calculated from the number of contracts.",
+                                      "Safer Copy Trading: each user only sees and changes their own groups.",
+                                      "What\u0027s new in each update appears after installing and stays saved in the bell.",
+                                      "Fixed: the NinjaTrader message when closing it no longer arrives repeatedly in the bell or as a notification.",
+                                      "Slave accounts now show in Daily Target: with their own target or when their master reaches its target."
+                                  ],
+                      "publishedAt":  "2026-10-31T23:27:10.1671125Z"
+                  },
                   {
                       "id":  "bot-1.6.105",
                       "component":  "bot",
@@ -30,22 +56,6 @@
                                       "Copy Trading: each slave account can have its own daily target and loss; when reached, its copies close and it stops copying for the day."
                                   ],
                       "publishedAt":  "2026-10-31T23:27:08.4629503Z"
-                  },
-                  {
-                      "id":  "apk-1.0.54",
-                      "component":  "apk",
-                      "version":  "1.0.54",
-                      "title":  "Actualizacion de la APK",
-                      "notes":  [
-                                    "Conexiones: toca el estado para conectar o desconectar, ⟳ Ahora reinicia la conexión y mantén presionada para eliminar.",
-                                    "El botón \"+ Agregar conexión\" ahora está en Ajustes \u003e Conexiones, junto a todo lo de las conexiones.",
-                                    "Risk Cap automático en el bot: se calcula solo según los contratos.",
-                                    "Copy Trading más seguro: cada usuario solo ve y cambia sus propios grupos.",
-                                    "Las novedades de cada actualización aparecen al instalar y quedan guardadas en la campana.",
-                                    "Corregido: el aviso de NinjaTrader al cerrarlo ya no llega repetido a la campana ni como notificación.",
-                                    "Las cuentas slave ahora aparecen en Daily Target: con su propia meta o cuando su master llega a la suya."
-                                ],
-                      "publishedAt":  "2026-10-31T23:19:25.3206284Z"
                   }
               ]
 }
