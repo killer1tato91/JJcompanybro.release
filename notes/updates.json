@@ -1,6 +1,22 @@
 {
-    "updatedAt":  "2026-10-31T23:19:23.4499813Z",
+    "updatedAt":  "2026-10-31T23:19:25.3206284Z",
     "items":  [
+                  {
+                      "id":  "apk-1.0.54",
+                      "component":  "apk",
+                      "version":  "1.0.54",
+                      "title":  "Actualizacion de la APK",
+                      "notes":  [
+                                    "Conexiones: toca el estado para conectar o desconectar, ⟳ Ahora reinicia la conexión y mantén presionada para eliminar.",
+                                    "El botón \"+ Agregar conexión\" ahora está en Ajustes \u003e Conexiones, junto a todo lo de las conexiones.",
+                                    "Risk Cap automático en el bot: se calcula solo según los contratos.",
+                                    "Copy Trading más seguro: cada usuario solo ve y cambia sus propios grupos.",
+                                    "Las novedades de cada actualización aparecen al instalar y quedan guardadas en la campana.",
+                                    "Corregido: el aviso de NinjaTrader al cerrarlo ya no llega repetido a la campana ni como notificación.",
+                                    "Las cuentas slave ahora aparecen en Daily Target: con su propia meta o cuando su master llega a la suya."
+                                ],
+                      "publishedAt":  "2026-10-31T23:19:25.3206284Z"
+                  },
                   {
                       "id":  "bot-1.6.105",
                       "component":  "bot",
