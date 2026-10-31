@@ -1,19 +1,13 @@
 {
-    "version":  "1.6.105",
+    "version":  "1.6.106",
     "packagePath":  "bot/JJBotPack.zip",
-    "sha256":  "e273cd135f0551fb5880738297e11136c4ba85061ab0ab535556915755442d5b",
+    "sha256":  "bea5a746adbc8124dfcabc3679dfb2f190c958e9b20b953b11426e9f22dcd34e",
     "requiredAppVersion":  "1.1.28",
     "learningBaseVersion":  "1.6.81.20261013.234501",
     "notes":  [
-                  "Open Bell: nuevo SHORT de rescate a las 09:30:13 los dias que marca LONG y el precio cae 5 puntos o mas.",
-                  "Open Bell: el flip ahora gira con el tamaño completo.",
-                  "Se quitaron las estrategias viejas: solo quedan CORE20 y COMBINED, y entra con todos los contratos configurados.",
-                  "Guardián de noticias activo: bloquea entradas y cierra posiciones 2 minutos antes y después de noticias USD de alto impacto.",
-                  "Copy trading: cierra solo las posiciones copiadas que quedan huérfanas o en contra de la master, y recorta contratos de más.",
-                  "Copy trading: opción Micro por cuenta (la master opera NQ y la cuenta entra en MNQ).",
-                  "Journal: cada trade guarda su MFE y MAE (mejor y peor momento del trade).",
-                  "Al abrir NinjaTrader, las actualizaciones del bot se compilan solas (si no hay posiciones abiertas).",
-                  "Copy Trading: cada cuenta slave puede tener su propia meta y pérdida del día; al llegar se cierran sus copias y no copia más hoy."
+                  [
+                      "Auto reconexión y mensajes de NinjaTrader en la APK ahora llegan a todos los usuarios con la actualización del bot."
+                  ]
               ],
-    "publishedAt":  "2026-10-31T23:08:04.3453446Z"
+    "publishedAt":  "2026-10-31T23:53:37.9100545Z"
 }
