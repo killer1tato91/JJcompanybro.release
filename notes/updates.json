@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-10-31T23:39:39.9412123Z",
+    "updatedAt":  "2026-10-31T23:53:46.5403344Z",
     "items":  [
+                  {
+                      "id":  "bot-1.6.106",
+                      "component":  "bot",
+                      "version":  "1.6.106",
+                      "title":  "Actualizacion del bot",
+                      "notes":  [
+                                    "Auto reconexión y mensajes de NinjaTrader en la APK ahora llegan a todos los usuarios con la actualización del bot."
+                                ],
+                      "titleEn":  "Bot update",
+                      "notesEn":  [
+                                      "Auto reconexión y mensajes de NinjaTrader en la APK ahora llegan a todos los usuarios con la actualización del bot."
+                                  ],
+                      "publishedAt":  "2026-10-31T23:53:46.5403344Z"
+                  },
                   {
                       "id":  "desktop-1.1.109",
                       "component":  "desktop",
