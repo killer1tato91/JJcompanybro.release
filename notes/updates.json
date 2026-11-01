@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-11-01T00:03:09.1033286Z",
+    "updatedAt":  "2026-11-01T00:34:34.7970006Z",
     "items":  [
+                  {
+                      "id":  "bot-1.6.106",
+                      "component":  "bot",
+                      "version":  "1.6.106",
+                      "title":  "Actualizacion del bot",
+                      "notes":  [
+                                    "Auto reconexión y mensajes de NinjaTrader en la APK ahora llegan a todos los usuarios con la actualización del bot."
+                                ],
+                      "titleEn":  "Bot update",
+                      "notesEn":  [
+                                      "Auto reconnect and NinjaTrader messages in the app now reach every user with the bot update."
+                                  ],
+                      "publishedAt":  "2026-11-01T00:34:34.7970006Z"
+                  },
                   {
                       "id":  "desktop-1.1.110",
                       "component":  "desktop",
@@ -28,20 +42,6 @@
                                       "New search in Accounts: type the prop firm before buying and it tells you if it works with NinjaTrader, the JJ bot and copier (and TradingView)."
                                   ],
                       "publishedAt":  "2026-10-31T23:54:22.5792103Z"
-                  },
-                  {
-                      "id":  "bot-1.6.106",
-                      "component":  "bot",
-                      "version":  "1.6.106",
-                      "title":  "Actualizacion del bot",
-                      "notes":  [
-                                    "Auto reconexión y mensajes de NinjaTrader en la APK ahora llegan a todos los usuarios con la actualización del bot."
-                                ],
-                      "titleEn":  "Bot update",
-                      "notesEn":  [
-                                      "Auto reconexión y mensajes de NinjaTrader en la APK ahora llegan a todos los usuarios con la actualización del bot."
-                                  ],
-                      "publishedAt":  "2026-10-31T23:53:46.5403344Z"
                   },
                   {
                       "id":  "desktop-1.1.109",
