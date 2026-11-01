@@ -1,6 +1,24 @@
 {
-    "updatedAt":  "2026-11-01T00:34:34.7970006Z",
+    "updatedAt":  "2026-11-01T07:07:52.9085030Z",
     "items":  [
+                  {
+                      "id":  "apk-1.0.57",
+                      "component":  "apk",
+                      "version":  "1.0.57",
+                      "title":  "Actualizacion de la APK",
+                      "notes":  [
+                                    "Cuentas: nueva tarjeta \"Prop firms compatibles\" con la lista de firmas que funcionan con NinjaTrader, qué permite cada una y enlace a su sitio oficial",
+                                    "Cuentas: alerta de microscalping por cuenta (porcentaje de la ganancia del ciclo en trades muy cortos) y recomendación antes de pedir el payout",
+                                    "Notificación push cuando una cuenta se acerque al límite de microscalping de la firma"
+                                ],
+                      "titleEn":  "App update",
+                      "notesEn":  [
+                                      "Cuentas: nueva tarjeta \"Prop firms compatibles\" con la lista de firmas que funcionan con NinjaTrader, qué permite cada una y enlace a su sitio oficial",
+                                      "Cuentas: alerta de microscalping por cuenta (porcentaje de la ganancia del ciclo en trades muy cortos) y recomendación antes de pedir el payout",
+                                      "Notificación push cuando una cuenta se acerque al límite de microscalping de la firma"
+                                  ],
+                      "publishedAt":  "2026-11-01T07:07:52.9085030Z"
+                  },
                   {
                       "id":  "bot-1.6.106",
                       "component":  "bot",
