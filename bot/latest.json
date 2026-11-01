@@ -1,13 +1,13 @@
 {
-    "version":  "1.6.106",
+    "version":  "1.6.107",
     "packagePath":  "bot/JJBotPack.zip",
-    "sha256":  "bea5a746adbc8124dfcabc3679dfb2f190c958e9b20b953b11426e9f22dcd34e",
+    "sha256":  "6ad921e7e3ff55f34cc71f06b662454ecffbf29ad9c0e512bf7b3e6faeb5f0a9",
     "requiredAppVersion":  "1.1.28",
     "learningBaseVersion":  "1.6.81.20261013.234501",
     "notes":  [
                   [
-                      "Auto reconexión y mensajes de NinjaTrader en la APK ahora llegan a todos los usuarios con la actualización del bot."
+                      "Mejoras y correcciones generales"
                   ]
               ],
-    "publishedAt":  "2026-10-31T23:53:37.9100545Z"
+    "publishedAt":  "2026-11-01T19:03:11.7932332Z"
 }
