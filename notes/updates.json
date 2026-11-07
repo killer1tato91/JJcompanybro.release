@@ -1,6 +1,26 @@
 {
-    "updatedAt":  "2026-11-07T05:56:32.0325612Z",
+    "updatedAt":  "2026-11-07T23:32:08.8845702Z",
     "items":  [
+                  {
+                      "id":  "apk-1.0.59",
+                      "component":  "apk",
+                      "version":  "1.0.59",
+                      "title":  "Actualizacion de la APK",
+                      "notes":  [
+                                    "Alarma push si el bot, NinjaTrader o Lucid se desconectan en horario de mercado (canal \u0027Alarma del bot\u0027)",
+                                    "Aviso a las 9:20 ET: bot listo para la apertura o que falta",
+                                    "Boton CERRAR TODO en la pagina del bot (cierra a mercado las cuentas de tus perfiles)",
+                                    "Ajustes \u003e Conexiones: boton Conectar en orden (Live primero, luego Lucid)"
+                                ],
+                      "titleEn":  "App update",
+                      "notesEn":  [
+                                      "Push alarm if the bot, NinjaTrader or Lucid disconnect during market hours (\u0027Bot alarm\u0027 channel)",
+                                      "9:20 ET notice: bot ready for the open, or what is missing",
+                                      "CLOSE ALL button on the bot page (flattens your profile accounts at market)",
+                                      "Settings \u003e Connections: Connect in order button (Live first, then Lucid)"
+                                  ],
+                      "publishedAt":  "2026-11-07T23:32:08.8845702Z"
+                  },
                   {
                       "id":  "desktop-1.1.115",
                       "component":  "desktop",
