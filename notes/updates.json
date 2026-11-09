@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-11-09T18:15:10.0845480Z",
+    "updatedAt":  "2026-11-09T22:27:04.4676838Z",
     "items":  [
+                  {
+                      "id":  "apk-1.0.63",
+                      "component":  "apk",
+                      "version":  "1.0.63",
+                      "title":  "Actualizacion de la APK",
+                      "notes":  [
+                                    "Mejoras y correcciones generales"
+                                ],
+                      "titleEn":  "App update",
+                      "notesEn":  [
+                                      "Mejoras y correcciones generales"
+                                  ],
+                      "publishedAt":  "2026-11-09T22:27:04.4676838Z"
+                  },
                   {
                       "id":  "desktop-1.1.116",
                       "component":  "desktop",
