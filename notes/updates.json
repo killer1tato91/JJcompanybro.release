@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-11-10T03:35:47.2242801Z",
+    "updatedAt":  "2026-11-10T03:46:36.4215255Z",
     "items":  [
+                  {
+                      "id":  "desktop-1.1.117",
+                      "component":  "desktop",
+                      "version":  "1.1.117",
+                      "title":  "Actualizacion de la app",
+                      "notes":  [
+                                    "Mejoras y correcciones generales"
+                                ],
+                      "titleEn":  "Desktop update",
+                      "notesEn":  [
+                                      "Mejoras y correcciones generales"
+                                  ],
+                      "publishedAt":  "2026-11-10T03:46:36.4215255Z"
+                  },
                   {
                       "id":  "bot-1.6.113",
                       "component":  "bot",
