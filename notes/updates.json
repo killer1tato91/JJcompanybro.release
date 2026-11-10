@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-11-09T22:27:04.4676838Z",
+    "updatedAt":  "2026-11-10T03:35:47.2242801Z",
     "items":  [
+                  {
+                      "id":  "bot-1.6.113",
+                      "component":  "bot",
+                      "version":  "1.6.113",
+                      "title":  "Actualizacion del bot",
+                      "notes":  [
+                                    "Mejoras y correcciones generales"
+                                ],
+                      "titleEn":  "Bot update",
+                      "notesEn":  [
+                                      "Mejoras y correcciones generales"
+                                  ],
+                      "publishedAt":  "2026-11-10T03:35:47.2242801Z"
+                  },
                   {
                       "id":  "apk-1.0.63",
                       "component":  "apk",
