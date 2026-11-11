@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T19:41:20.916Z",
+  "generatedAt": "2026-11-11T19:33:50.907Z",
   "rulesVersionChecked": "2026.09.13.2",
   "firmsChecked": [
     "TRADEIFY"
   ],
   "summary": {
     "sourcesChecked": 3,
-    "successfulSources": 3,
-    "failedSources": 0,
+    "successfulSources": 2,
+    "failedSources": 1,
     "detectedChanges": 0
   },
   "changes": [],
@@ -17,64 +17,17 @@
       "sourceId": "tradeify-select-evaluation",
       "sourceName": "Select Evaluation Accounts",
       "sourceUrl": "https://help.tradeify.co/en/articles/12853921-select-evaluation-accounts",
-      "checkedAt": "2026-11-10T19:41:13.574Z",
-      "success": true,
-      "checks": [
-        {
-          "field": "SELECT.minimumTradingDays",
-          "expectedValue": 3,
-          "detectedValue": 3,
-          "matches": true,
-          "confidence": 0.95,
-          "evidence": "Select minimum trading days"
-        },
-        {
-          "field": "SELECT.consistencyPercent",
-          "expectedValue": 40,
-          "detectedValue": 40,
-          "matches": true,
-          "confidence": 0.98,
-          "evidence": "Select consistency rule"
-        },
-        {
-          "field": "SELECT.25000.profitTarget",
-          "expectedValue": 1500,
-          "detectedValue": 1500,
-          "matches": true,
-          "confidence": 0.98,
-          "evidence": "Select 25K profit target"
-        },
-        {
-          "field": "SELECT.50000.profitTarget",
-          "expectedValue": 3000,
-          "detectedValue": 3000,
-          "matches": true,
-          "confidence": 0.98,
-          "evidence": "Select 50K profit target"
-        },
-        {
-          "field": "SELECT.100000.profitTarget",
-          "expectedValue": 6000,
-          "detectedValue": 6000,
-          "matches": true,
-          "confidence": 0.98,
-          "evidence": "Select 100K profit target"
-        },
-        {
-          "field": "SELECT.150000.profitTarget",
-          "expectedValue": 9000,
-          "detectedValue": 9000,
-          "matches": true,
-          "confidence": 0.98,
-          "evidence": "Select 150K profit target"
-        }
-      ]
+      "checkedAt": "2026-11-11T19:33:43.561Z",
+      "success": false,
+      "status": "ACCESS_BLOCKED",
+      "error": "HTTP 403 en https://help.tradeify.co/en/articles/12853921-select-evaluation-accounts",
+      "checks": []
     },
     {
       "sourceId": "tradeify-growth-evaluation",
       "sourceName": "Growth Evaluation Accounts",
       "sourceUrl": "https://help.tradeify.co/en/articles/10495915-growth-evaluation-accounts",
-      "checkedAt": "2026-11-10T19:41:17.254Z",
+      "checkedAt": "2026-11-11T19:33:47.264Z",
       "success": true,
       "checks": [
         {
@@ -195,7 +148,7 @@
       "sourceId": "tradeify-consistency",
       "sourceName": "Consistency Rule",
       "sourceUrl": "https://help.tradeify.co/en/articles/10468320-rules-consistency-rule",
-      "checkedAt": "2026-11-10T19:41:20.916Z",
+      "checkedAt": "2026-11-11T19:33:50.907Z",
       "success": true,
       "checks": [
         {
