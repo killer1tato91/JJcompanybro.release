@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-11-13T08:06:22.5930166Z",
+    "updatedAt":  "2026-11-13T16:04:23.8997225Z",
     "items":  [
+                  {
+                      "id":  "bot-1.6.119",
+                      "component":  "bot",
+                      "version":  "1.6.119",
+                      "title":  "Actualizacion del bot",
+                      "notes":  [
+                                    "Mejoras y correcciones generales"
+                                ],
+                      "titleEn":  "Bot update",
+                      "notesEn":  [
+                                      "Mejoras y correcciones generales"
+                                  ],
+                      "publishedAt":  "2026-11-13T16:04:23.8997225Z"
+                  },
                   {
                       "id":  "bot-1.6.118",
                       "component":  "bot",
