@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-11-11T16:31:40.5361245Z",
+    "updatedAt":  "2026-11-13T06:02:09.1581010Z",
     "items":  [
+                  {
+                      "id":  "bot-1.6.116",
+                      "component":  "bot",
+                      "version":  "1.6.116",
+                      "title":  "Actualizacion del bot",
+                      "notes":  [
+                                    "Mejoras y correcciones generales"
+                                ],
+                      "titleEn":  "Bot update",
+                      "notesEn":  [
+                                      "Mejoras y correcciones generales"
+                                  ],
+                      "publishedAt":  "2026-11-13T06:02:09.1581010Z"
+                  },
                   {
                       "id":  "desktop-1.1.118",
                       "component":  "desktop",
