@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-11-14T22:03:32.3836830Z",
+    "updatedAt":  "2026-11-15T01:30:32.9232328Z",
     "items":  [
+                  {
+                      "id":  "bot-1.6.123",
+                      "component":  "bot",
+                      "version":  "1.6.123",
+                      "title":  "Actualizacion del bot",
+                      "notes":  [
+                                    "Mejoras y correcciones generales"
+                                ],
+                      "titleEn":  "Bot update",
+                      "notesEn":  [
+                                      "Mejoras y correcciones generales"
+                                  ],
+                      "publishedAt":  "2026-11-15T01:30:32.9232328Z"
+                  },
                   {
                       "id":  "bot-1.6.122",
                       "component":  "bot",
@@ -592,36 +606,6 @@
                                       "Slave accounts now show in Daily Target: with their own target or when their master reaches its target."
                                   ],
                       "publishedAt":  "2026-10-31T23:27:10.1671125Z"
-                  },
-                  {
-                      "id":  "bot-1.6.105",
-                      "component":  "bot",
-                      "version":  "1.6.105",
-                      "title":  "Actualizacion del bot",
-                      "notes":  [
-                                    "Open Bell: nuevo SHORT de rescate a las 09:30:13 los dias que marca LONG y el precio cae 5 puntos o mas.",
-                                    "Open Bell: el flip ahora gira con el tamaño completo.",
-                                    "Se quitaron las estrategias viejas: solo quedan CORE20 y COMBINED, y entra con todos los contratos configurados.",
-                                    "Guardián de noticias activo: bloquea entradas y cierra posiciones 2 minutos antes y después de noticias USD de alto impacto.",
-                                    "Copy trading: cierra solo las posiciones copiadas que quedan huérfanas o en contra de la master, y recorta contratos de más.",
-                                    "Copy trading: opción Micro por cuenta (la master opera NQ y la cuenta entra en MNQ).",
-                                    "Journal: cada trade guarda su MFE y MAE (mejor y peor momento del trade).",
-                                    "Al abrir NinjaTrader, las actualizaciones del bot se compilan solas (si no hay posiciones abiertas).",
-                                    "Copy Trading: cada cuenta slave puede tener su propia meta y pérdida del día; al llegar se cierran sus copias y no copia más hoy."
-                                ],
-                      "titleEn":  "Bot update",
-                      "notesEn":  [
-                                      "Open Bell: new rescue SHORT at 09:30:13 on days it signals LONG and price drops 5 points or more.",
-                                      "Open Bell: the flip now reverses with the full size.",
-                                      "Old strategies removed: only CORE20 and COMBINED remain, and it enters with all the configured contracts.",
-                                      "News guard active: blocks entries and closes positions 2 minutes before and after high-impact USD news.",
-                                      "Copy trading: closes copied positions left orphaned or against the master, and trims extra contracts.",
-                                      "Copy trading: Micro option per account (the master trades NQ and the account enters MNQ).",
-                                      "Journal: every trade saves its MFE and MAE (best and worst moment of the trade).",
-                                      "When NinjaTrader opens, bot updates compile by themselves (if there are no open positions).",
-                                      "Copy Trading: each slave account can have its own daily target and loss; when reached, its copies close and it stops copying for the day."
-                                  ],
-                      "publishedAt":  "2026-10-31T23:27:08.4629503Z"
                   }
               ]
 }
