@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-11-15T01:49:09.7339374Z",
+    "updatedAt":  "2026-11-17T15:00:43.3732511Z",
     "items":  [
+                  {
+                      "id":  "bot-1.6.124",
+                      "component":  "bot",
+                      "version":  "1.6.124",
+                      "title":  "Actualizacion del bot",
+                      "notes":  [
+                                    "Mejoras y correcciones generales"
+                                ],
+                      "titleEn":  "Bot update",
+                      "notesEn":  [
+                                      "Mejoras y correcciones generales"
+                                  ],
+                      "publishedAt":  "2026-11-17T15:00:43.3732511Z"
+                  },
                   {
                       "id":  "apk-1.0.64",
                       "component":  "apk",
@@ -580,20 +594,6 @@
                                       "Update notes now show in the app language."
                                   ],
                       "publishedAt":  "2026-10-31T23:39:39.9412123Z"
-                  },
-                  {
-                      "id":  "apk-1.0.55",
-                      "component":  "apk",
-                      "version":  "1.0.55",
-                      "title":  "Actualizacion de la APK",
-                      "notes":  [
-                                    "Las novedades de las actualizaciones salen en el idioma de la app."
-                                ],
-                      "titleEn":  "App update",
-                      "notesEn":  [
-                                      "Update notes now show in the app language."
-                                  ],
-                      "publishedAt":  "2026-10-31T23:30:39.8595939Z"
                   }
               ]
 }
