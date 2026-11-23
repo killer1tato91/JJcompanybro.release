@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T19:33:01.714Z",
+  "generatedAt": "2026-11-23T23:50:06.721Z",
   "rulesVersionChecked": "2026.09.13.2",
   "firmsChecked": [
     "TRADEIFY"
@@ -13,7 +13,7 @@
   },
   "changes": [
     {
-      "id": "tradeify-select-evaluation__SELECT.consistencyPercent__2026-11-22",
+      "id": "tradeify-select-evaluation__SELECT.consistencyPercent__2026-11-23",
       "firmCode": "TRADEIFY",
       "sourceId": "tradeify-select-evaluation",
       "sourceName": "Select Evaluation Accounts",
@@ -23,7 +23,7 @@
       "newValue": null,
       "confidence": 0.98,
       "evidence": "Select consistency rule",
-      "detectedAt": "2026-11-22T19:32:54.589Z",
+      "detectedAt": "2026-11-23T23:49:59.450Z",
       "status": "EXTRACTION_FAILED"
     }
   ],
@@ -32,7 +32,7 @@
       "sourceId": "tradeify-select-evaluation",
       "sourceName": "Select Evaluation Accounts",
       "sourceUrl": "https://help.tradeify.co/en/articles/12853921-select-evaluation-accounts",
-      "checkedAt": "2026-11-22T19:32:54.588Z",
+      "checkedAt": "2026-11-23T23:49:59.450Z",
       "success": true,
       "checks": [
         {
@@ -89,7 +89,7 @@
       "sourceId": "tradeify-growth-evaluation",
       "sourceName": "Growth Evaluation Accounts",
       "sourceUrl": "https://help.tradeify.co/en/articles/10495915-growth-evaluation-accounts",
-      "checkedAt": "2026-11-22T19:32:58.222Z",
+      "checkedAt": "2026-11-23T23:50:03.036Z",
       "success": true,
       "checks": [
         {
@@ -210,7 +210,7 @@
       "sourceId": "tradeify-consistency",
       "sourceName": "Consistency Rule",
       "sourceUrl": "https://help.tradeify.co/en/articles/10468320-rules-consistency-rule",
-      "checkedAt": "2026-11-22T19:33:01.714Z",
+      "checkedAt": "2026-11-23T23:50:06.721Z",
       "success": true,
       "checks": [
         {
