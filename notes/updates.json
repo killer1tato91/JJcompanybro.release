@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-11-19T21:01:40.7038500Z",
+    "updatedAt":  "2026-11-23T17:45:15.6343493Z",
     "items":  [
+                  {
+                      "id":  "bot-1.6.127",
+                      "component":  "bot",
+                      "version":  "1.6.127",
+                      "title":  "Actualizacion del bot",
+                      "notes":  [
+                                    "Mejoras y correcciones generales"
+                                ],
+                      "titleEn":  "Bot update",
+                      "notesEn":  [
+                                      "Mejoras y correcciones generales"
+                                  ],
+                      "publishedAt":  "2026-11-23T17:45:15.6343493Z"
+                  },
                   {
                       "id":  "bot-1.6.126",
                       "component":  "bot",
@@ -556,20 +570,6 @@
                                       "Notificación push cuando una cuenta se acerque al límite de microscalping de la firma"
                                   ],
                       "publishedAt":  "2026-11-01T07:07:52.9085030Z"
-                  },
-                  {
-                      "id":  "bot-1.6.106",
-                      "component":  "bot",
-                      "version":  "1.6.106",
-                      "title":  "Actualizacion del bot",
-                      "notes":  [
-                                    "Auto reconexión y mensajes de NinjaTrader en la APK ahora llegan a todos los usuarios con la actualización del bot."
-                                ],
-                      "titleEn":  "Bot update",
-                      "notesEn":  [
-                                      "Auto reconnect and NinjaTrader messages in the app now reach every user with the bot update."
-                                  ],
-                      "publishedAt":  "2026-11-01T00:34:34.7970006Z"
                   }
               ]
 }
