@@ -1,6 +1,20 @@
 {
-    "updatedAt":  "2026-11-23T17:54:08.2031214Z",
+    "updatedAt":  "2026-11-26T06:05:07.4916309Z",
     "items":  [
+                  {
+                      "id":  "desktop-1.1.123",
+                      "component":  "desktop",
+                      "version":  "1.1.123",
+                      "title":  "Actualizacion de la app",
+                      "notes":  [
+                                    "Mejoras y correcciones generales"
+                                ],
+                      "titleEn":  "Desktop update",
+                      "notesEn":  [
+                                      "Mejoras y correcciones generales"
+                                  ],
+                      "publishedAt":  "2026-11-26T06:05:07.4916309Z"
+                  },
                   {
                       "id":  "desktop-1.1.122",
                       "component":  "desktop",
@@ -552,20 +566,6 @@
                                       "Mejoras y correcciones generales"
                                   ],
                       "publishedAt":  "2026-11-01T19:18:49.4108293Z"
-                  },
-                  {
-                      "id":  "bot-1.6.107",
-                      "component":  "bot",
-                      "version":  "1.6.107",
-                      "title":  "Actualizacion del bot",
-                      "notes":  [
-                                    "Mejoras y correcciones generales"
-                                ],
-                      "titleEn":  "Bot update",
-                      "notesEn":  [
-                                      "Mejoras y correcciones generales"
-                                  ],
-                      "publishedAt":  "2026-11-01T19:03:19.6842708Z"
                   }
               ]
 }
